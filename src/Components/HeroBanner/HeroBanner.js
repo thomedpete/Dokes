@@ -11,20 +11,20 @@ import './HeroBanner.css'
 const HeroBanner = () => {
   return (
   <div className='hero-container'>
-      <Card sx={{ maxWidth: '60%', backgroundColor:"green" }}>
-        <CardMedia
+      <Card sx={{ maxWidth: '100%', backgroundColor:"cornflowerblue" }}>
+        {/* <CardMedia
           sx={{ height: 100 }}
           image=""
           title="green iguana"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-           Banner Stuff
+        /> */}
+        {/* <CardContent> */}
+          <Typography p="5%" gutterBottom variant="h5" component="div">
+           Banner Stuff - writing stuff here to make it wider
           </Typography>
-          <Typography variant="body2" color="text.secondary">
+          {/* <Typography variant="body2" color="text.secondary"> */}
         
-          </Typography>
-        </CardContent>
+          {/* </Typography> */}
+        {/* </CardContent> */}
       </Card>
     </div>
   );

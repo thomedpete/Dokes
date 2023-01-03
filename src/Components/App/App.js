@@ -5,14 +5,24 @@ import HeroBanner from '../HeroBanner/HeroBanner';
 import JokeCard from '../JokeCard/JokeCard';
 import './App.css';
 
+import { Stack } from '@mui/material';
+
+
 function App() {
   return (
     <div className="App">
       <Header/>
-      <h1>LameWire</h1>
-      <HeroBanner/>
-      <JokeCard/>
-      <Button variant="contained">New Joke</Button>
+       <Stack
+        direction="column"
+        spacing={2}
+        justifyContent="space-between"
+        alignItems="center"
+      >
+        <h1>LameWire</h1>
+        <HeroBanner/>
+        <JokeCard/>
+        <Button variant="contained">New Joke</Button>
+      </Stack>
     </div>
   );
 }
