@@ -10,7 +10,7 @@ import "./JokeCard.css"
 const JokeCard = () => {
   return (
     <div className='card-container'>
-      <Card sx={{ maxWidth: '60%', backgroundColor: "blue" }}>
+      <Card className='joke-card' sx={{ maxWidth: '60%', backgroundColor: "blue" }}>
         <CardMedia
           sx={{ height: 100 }}
           image=""

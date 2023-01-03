@@ -4,14 +4,22 @@ describe('onLoad', () => {
   });
 
   it('Should see the title of the page', () => {
-    cy.get('')
+    cy.get('.page-title')
+  });
+
+  it('Should see the title of the page', () => {
+    cy.get('.header')
+  });
+
+  it('Should see a amusing heroBanner displayed ', () => {
+    cy.get('.joke-card')
   });
 
   it('Should see a random joke displayed ', () => {
-    cy.get('')
+    cy.get('.hero-banner')
   });
 
-  it('', () => {
+  it.skip('', () => {
   });
 
 

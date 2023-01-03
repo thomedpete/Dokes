@@ -9,7 +9,7 @@ import AppBar from '@mui/material/AppBar'
 
 const Header = () => {
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box className='header' sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
           <IconButton
