@@ -6,29 +6,27 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { red } from '@mui/material/colors';
-import './HeroBanner.css'
-
-const HeroBanner = () => {
+import "./JokeCard.css"
+const JokeCard = () => {
   return (
-  <div className='hero-container'>
-      <Card sx={{ maxWidth: '60%', backgroundColor:"green" }}>
+    <div className='card-container'>
+      <Card sx={{ maxWidth: '60%', backgroundColor: "blue" }}>
         <CardMedia
           sx={{ height: 100 }}
           image=""
-          title="green iguana"
+          title=""
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-           Banner Stuff
+           How do you make a tissue dance?
           </Typography>
           <Typography variant="body2" color="text.secondary">
-        
+            Put a little boogie in it! 
           </Typography>
         </CardContent>
       </Card>
     </div>
   );
-    
 }
 
-export default HeroBanner
+export default JokeCard; 
