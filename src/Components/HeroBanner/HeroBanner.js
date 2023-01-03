@@ -11,15 +11,15 @@ import './HeroBanner.css'
 const HeroBanner = () => {
   return (
   <div className='hero-container'>
-      <Card sx={{ maxWidth: 345, backgroundColor:"green" }}>
+      <Card sx={{ maxWidth: '60%', backgroundColor:"green" }}>
         <CardMedia
           sx={{ height: 100 }}
-          image="/static/images/cards/contemplative-reptile.jpg"
+          image=""
           title="green iguana"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            Joke
+            fghfghfghfghfghfghfghfghfghfghfghfghfghfghfgh
           </Typography>
           <Typography variant="body2" color="text.secondary">
          A very funny joke 
