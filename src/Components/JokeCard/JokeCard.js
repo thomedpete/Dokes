@@ -7,10 +7,11 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { red } from '@mui/material/colors';
 import "./JokeCard.css"
-
 import { Stack } from '@mui/material';
 
-const JokeCard = () => {
+
+const JokeCard = ({ jokes }) => {
+
   return (
     <div className='card-container'>
 
@@ -20,26 +21,28 @@ const JokeCard = () => {
           sx={{ height: 100 }}
           image=""
           title=""
+
+        />
+        
+
         /> */}
-        <CardContent flexGrow="1">
-          <Stack
-            direction="column"
-            spacing={2}
-            justifyContent="space-between"
-            alignItems="center"
-          >
-            <Card sx={{ backgroundColor: "#1976d2"}}>
+
+        <Stack
+          direction="column"
+          spacing={2}
+          justifyContent="space-between"
+          alignItems="center"
+        >
+          <CardContent flexGrow="1">
+     
+
+            <Card sx={{ backgroundColor: "#1976d2" }}>
               <Typography m="2.55%" gutterBottom variant="h5" color="gainsboro">
-              How do you make a tissue dance?
+                {jokes}
               </Typography>
             </Card>
-            <Card sx={{ backgroundColor: "#1976d2"}}>
-              <Typography m="2.5%" variant="h6" color="gainsboro">
-                Put a little boogie in it! 
-              </Typography>
-            </Card>
-          </Stack>
-        </CardContent>
+          </CardContent>
+        </Stack>
       </Card>
     </div>
   );
