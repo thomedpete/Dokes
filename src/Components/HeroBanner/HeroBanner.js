@@ -11,8 +11,10 @@ import './HeroBanner.css'
 const HeroBanner = () => {
   return (
   <div className='hero-container'>
+
       <Card sx={{ maxWidth: '100%', backgroundColor:"cornflowerblue" }}>
         {/* <CardMedia
+
           sx={{ height: 100 }}
           image=""
           title="green iguana"

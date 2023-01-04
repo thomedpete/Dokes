@@ -12,6 +12,7 @@ function App() {
   return (
     <div className="App">
       <Header/>
+
        <Stack
         direction="column"
         spacing={2}
@@ -24,6 +25,7 @@ function App() {
         <JokeCard/>
         <Button variant="contained">New Joke</Button>
       </Stack>
+
     </div>
   );
 }

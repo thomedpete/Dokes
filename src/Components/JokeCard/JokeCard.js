@@ -13,8 +13,10 @@ import { Stack } from '@mui/material';
 const JokeCard = () => {
   return (
     <div className='card-container'>
+
       <Card sx={{ maxWidth: '60%', backgroundColor: "lightsteelblue" }}>
         {/* <CardMedia
+
           sx={{ height: 100 }}
           image=""
           title=""
