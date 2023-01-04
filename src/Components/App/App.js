@@ -9,6 +9,8 @@ import getAllJokes from '../../apiCalls'
 import Checkbox from '@mui/material/Checkbox';
 import FavoriteBorder from '@mui/icons-material/FavoriteBorder';
 import Favorite from '@mui/icons-material/Favorite';
+import banner from '../../assets/banner2.png'
+// import getAllJokes from '../../apiCalls'
 import './App.css';
 
 const label = { inputProps: { 'aria-label': 'Favorite button to put in pocket/saved jokes' } }
@@ -26,14 +28,14 @@ const App = () => {
     let url = "https://icanhazdadjoke.com/";
     let result = null;
     try {
-        result = await axios(url, {
-            headers: {
-                Accept: "application/json",
-            },
-        });
+      result = await axios(url, {
+        headers: {
+          Accept: "application/json",
+        },
+      });
     } catch (e) {
-        setError(e)
-        console.log(e);
+      setError(e)
+      console.log(e);
     }
     setJokes(result.data.joke);
     setPocket(result.data);
@@ -44,8 +46,9 @@ const App = () => {
 
   return (
     <div className="App">
-      <Header/>
-       <Stack
+      <Header />
+      <img src={banner} className='banner' />
+      <Stack
         direction="column"
         spacing={2}
         justifyContent="space-between"
