@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <Header/>
-      <h1>LameWire</h1>
+      <h1 className='page-title'>LameWire</h1>
       <HeroBanner/>
       <JokeCard/>
       <Button variant="contained">New Joke</Button>
