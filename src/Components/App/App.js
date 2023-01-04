@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import About from '../About/About';
 import Button from '@mui/material/Button';
 import Header from '../Header/Header';
 import HeroBanner from '../HeroBanner/HeroBanner';
@@ -11,6 +12,7 @@ import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
+import { Routes, Route } from 'react-router-dom'
 
 import getAllJokes from '../../apiCalls'
 import Checkbox from '@mui/material/Checkbox';
@@ -80,19 +82,20 @@ const App = () => {
             alignItems="center"
             margin={2}
           >
-          
-          {/* <Button variant="contained" sx={{ fontSize: "150%", width: "35%", fontWeight: "bold"  }}>POOF! You're a Sandwich</Button>
-          <HeroBanner/>
-          Route 1
-          <JokeCard jokes={jokes} />
-            <Checkbox {...label} checked={checked} onChange={handleChange} icon={<FavoriteBorder />} checkedIcon={<Favorite />} />
-          <Button variant="contained">New Joke</Button> */}
-              {/* we need to pass pocket down to Pocket, and set Pockets state to include the checked joke and any jokes that were alrady a part of that state */}
-          {/* Route 2 */}
-          <Pocket/>
+            <HeroBanner/>
+            <Routes>
+              <Route path="/" element={(
+                  <JokeCard jokes={jokes} />,
+                  <Checkbox {...label} checked={checked} onChange={handleChange} icon={<FavoriteBorder />} checkedIcon={<Favorite />} />,
+                  <Button variant="contained">New Joke</Button>
+              )}
+              />
+              <Route path="/pocket" element={(<Pocket/>)} />
+              <Route path="/about" element={(<About/>)} />
+            </Routes>
           </Stack>
         </div>
-        {/* Footer */}
+  {/* Footer */}
       <Box sx={{ bgcolor: 'background.paper', p: 6 }} component="footer">
         <Typography variant="h6" align="center" gutterBottom>
           Footer
@@ -107,7 +110,7 @@ const App = () => {
         </Typography>
         <Copyright />
       </Box>
-      {/* End footer */}
+  {/* End footer */}
     </ThemeProvider>
   );
 }
