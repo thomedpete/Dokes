@@ -6,7 +6,6 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import AppBar from '@mui/material/AppBar'
 
-
 const Header = () => {
   return (
     <Box className='header' sx={{ flexGrow: 1 }}>

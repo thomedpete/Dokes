@@ -7,6 +7,8 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { red } from '@mui/material/colors';
 import "./JokeCard.css"
+
+
 const JokeCard = () => {
   return (
     <div className='card-container'>
