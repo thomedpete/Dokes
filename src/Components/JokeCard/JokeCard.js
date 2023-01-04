@@ -13,7 +13,7 @@ const JokeCard = ({ jokes }) => {
   let jokeText = useRef(null)
 
   useEffect(() => {
-    TweenMax.to(jokeText, .8, { opacity: 1, y: -20, ease: Power3.easeOut })
+    TweenMax.to(jokeText, .8, { opacity: 1, y: -10, ease: Power3.easeOut })
   }, [])
 
   return (
@@ -27,7 +27,7 @@ const JokeCard = ({ jokes }) => {
         >
           <CardContent>
             <Card sx={{ backgroundColor: "#1976d2" }}>
-              <Typography m="2.55%" gutterBottom variant="h5" color="gainsboro" ref={el => {jokeText = el}}>
+              <Typography className='jokes' m="2.55%" gutterBottom variant="h5" color="gainsboro" ref={el => {jokeText = el}}>
                 {jokes}
               </Typography>
             </Card>
