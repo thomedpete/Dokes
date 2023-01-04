@@ -5,7 +5,7 @@ import Header from '../Header/Header';
 import HeroBanner from '../HeroBanner/HeroBanner';
 import JokeCard from '../JokeCard/JokeCard';
 import { Stack } from '@mui/material';
-import getAllJokes from '../../apiCalls'
+// import getAllJokes from '../../apiCalls'
 
 import './App.css';
 
