@@ -1,13 +1,20 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
+
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
-import "./JokeCard.css"
 import { Stack } from '@mui/material';
 
+import { TweenMax, Power3 } from 'gsap'
 
+import "./JokeCard.css"
 
 const JokeCard = ({ jokes }) => {
+  let jokeText = useRef(null)
+
+  useEffect(() => {
+    TweenMax.to(jokeText, .8, { opacity: 1, y: -20, ease: Power3.easeOut })
+  }, [])
 
   return (
     <div className='card-container'>
@@ -20,7 +27,7 @@ const JokeCard = ({ jokes }) => {
         >
           <CardContent>
             <Card sx={{ backgroundColor: "#1976d2" }}>
-              <Typography m="2.55%" gutterBottom variant="h5" color="gainsboro">
+              <Typography m="2.55%" gutterBottom variant="h5" color="gainsboro" ref={el => {jokeText = el}}>
                 {jokes}
               </Typography>
             </Card>
