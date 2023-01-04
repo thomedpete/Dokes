@@ -8,8 +8,7 @@ import Typography from '@mui/material/Typography';
 import { red } from '@mui/material/colors';
 import "./JokeCard.css"
 
-
-const JokeCard = () => {
+const JokeCard = ({ jokes }) => {
   return (
     <div className='card-container'>
       <Card className='joke-card' sx={{ maxWidth: '60%', backgroundColor: "blue" }}>
@@ -20,10 +19,7 @@ const JokeCard = () => {
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-           How do you make a tissue dance?
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Put a little boogie in it! 
+           {jokes}
           </Typography>
         </CardContent>
       </Card>
