@@ -7,20 +7,49 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { red } from '@mui/material/colors';
 import "./JokeCard.css"
+import { Stack } from '@mui/material';
+
 
 const JokeCard = ({ jokes }) => {
+
   return (
     <div className='card-container'>
-      <Card className='joke-card' sx={{ maxWidth: '60%', backgroundColor: "blue" }}>
-        <CardMedia
+
+      <Card sx={{ maxWidth: '60%', backgroundColor: "lightsteelblue" }}>
+        {/* <CardMedia
+
           sx={{ height: 100 }}
           image=""
           title=""
+
         />
-        <CardContent>
+        
+
+        /> */}
+      
+          <Stack
+            direction="column"
+            spacing={2}
+            justifyContent="space-between"
+            alignItems="center"
+          >
+          <CardContent flexGrow="1">
           <Typography gutterBottom variant="h5" component="div">
            {jokes}
           </Typography>
+          
+            <Card sx={{ backgroundColor: "#1976d2"}}>
+              <Typography m="2.55%" gutterBottom variant="h5" color="gainsboro">
+               {jokes}
+              </Typography>
+            </Card>
+            <Card sx={{ backgroundColor: "#1976d2"}}>
+              <Typography m="2.5%" variant="h6" color="gainsboro">
+                Put a little boogie in it! 
+              </Typography>
+            </Card>
+          </Stack>
+
         </CardContent>
       </Card>
     </div>
