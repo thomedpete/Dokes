@@ -37,19 +37,6 @@ const App = () => {
   return (
     <div className="App">
       <Header/>
-      <h1 className='page-title'>LameWire</h1>
-      <HeroBanner/>
-      <JokeCard jokes={jokes} />
-      <Button variant="contained">New Joke</Button>
-
-
-
-
-function App() {
-  return (
-    <div className="App">
-      <Header/>
-
        <Stack
         direction="column"
         spacing={2}
@@ -57,10 +44,11 @@ function App() {
         alignItems="center"
         margin={2}
       >
+      
         <Button variant="contained" sx={{ fontSize: "150%", width: "35%", fontWeight: "bold"  }}>POOF! You're a Sandwich</Button>
-        <HeroBanner/>
-        <JokeCard/>
-        <Button variant="contained">New Joke</Button>
+      <HeroBanner/>
+      <JokeCard jokes={jokes} />
+      <Button variant="contained">New Joke</Button>
       </Stack>
 
 
