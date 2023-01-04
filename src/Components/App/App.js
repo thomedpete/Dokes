@@ -5,7 +5,8 @@ import Header from '../Header/Header';
 import HeroBanner from '../HeroBanner/HeroBanner';
 import JokeCard from '../JokeCard/JokeCard';
 import { Stack } from '@mui/material';
-import getAllJokes from '../../apiCalls'
+import banner from '../../assets/banner2.png'
+// import getAllJokes from '../../apiCalls'
 
 import './App.css';
 
@@ -18,14 +19,14 @@ const App = () => {
     let url = "https://icanhazdadjoke.com/";
     let result = null;
     try {
-        result = await axios(url, {
-            headers: {
-                Accept: "application/json",
-            },
-        });
+      result = await axios(url, {
+        headers: {
+          Accept: "application/json",
+        },
+      });
     } catch (e) {
-        setError(e)
-        console.log(e);
+      setError(e)
+      console.log(e);
     }
     setJokes(result.data.joke);
   }
@@ -36,19 +37,19 @@ const App = () => {
 
   return (
     <div className="App">
-      <Header/>
-       <Stack
+      <Header />
+      <img src={banner} className='banner' />
+      <Stack
         direction="column"
         spacing={2}
         justifyContent="space-between"
         alignItems="center"
         margin={2}
       >
-      
-        <Button variant="contained" sx={{ fontSize: "150%", width: "35%", fontWeight: "bold"  }}>POOF! You're a Sandwich</Button>
-      <HeroBanner/>
-      <JokeCard jokes={jokes} />
-      <Button variant="contained">New Joke</Button>
+        <Button variant="contained" sx={{ fontSize: "150%", width: "35%", fontWeight: "bold" }}>POOF! You're a Sandwich</Button>
+        <HeroBanner />
+        <JokeCard jokes={jokes} />
+        <Button variant="contained">New Joke</Button>
       </Stack>
 
 
