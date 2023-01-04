@@ -17,8 +17,9 @@ function App() {
         spacing={2}
         justifyContent="space-between"
         alignItems="center"
+        margin={2}
       >
-        <h1>LameWire</h1>
+        <Button variant="contained" sx={{ fontSize: "200%", width: "33%"  }}>LameWire</Button>
         <HeroBanner/>
         <JokeCard/>
         <Button variant="contained">New Joke</Button>
