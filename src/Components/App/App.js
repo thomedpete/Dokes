@@ -5,11 +5,10 @@ import Header from '../Header/Header';
 import HeroBanner from '../HeroBanner/HeroBanner';
 import JokeCard from '../JokeCard/JokeCard';
 import { Stack } from '@mui/material';
-import getAllJokes from '../../apiCalls'
 import Checkbox from '@mui/material/Checkbox';
 import FavoriteBorder from '@mui/icons-material/FavoriteBorder';
 import Favorite from '@mui/icons-material/Favorite';
-import banner from '../../assets/banner2.png'
+import banner from '../../assets/banner3.png'
 // import getAllJokes from '../../apiCalls'
 import './App.css';
 
@@ -57,9 +56,10 @@ const App = () => {
       >
         <Button variant="contained" sx={{ fontSize: "150%", width: "35%", fontWeight: "bold"  }}>POOF! You're a Sandwich</Button>
       <HeroBanner/>
+      {e && e}
       <JokeCard jokes={jokes} />
         <Checkbox {...label} checked={checked} onChange={handleChange} icon={<FavoriteBorder />} checkedIcon={<Favorite />} />
-      <Button variant="contained">New Joke</Button>
+      <Button variant="contained" onClick={() => window.location.reload(false)}>New Joke</Button>
       {/* we need to pass pocket down to Pocket, and set Pockets state to include the checked joke and any jokes that were alrady a part of that state */}
       </Stack>
 
