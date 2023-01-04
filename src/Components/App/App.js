@@ -6,38 +6,49 @@ import HeroBanner from '../HeroBanner/HeroBanner';
 import JokeCard from '../JokeCard/JokeCard';
 import { Stack } from '@mui/material';
 import getAllJokes from '../../apiCalls'
-
+import Checkbox from '@mui/material/Checkbox';
+import FavoriteBorder from '@mui/icons-material/FavoriteBorder';
+import Favorite from '@mui/icons-material/Favorite';
+import banner from '../../assets/banner2.png'
+// import getAllJokes from '../../apiCalls'
 import './App.css';
 
+const label = { inputProps: { 'aria-label': 'Favorite button to put in pocket/saved jokes' } }
 
 const App = () => {
+  const [checked, setChecked] = useState(true);
+  const handleChange = (event) => {
+    setChecked(event.target.checked);
+  };
   const [jokes, setJokes] = useState('')
   const [e, setError] = useState('')
+  const [pocket, setPocket] = useState([])
 
   const getJokes = async () => {
     let url = "https://icanhazdadjoke.com/";
     let result = null;
     try {
-        result = await axios(url, {
-            headers: {
-                Accept: "application/json",
-            },
-        });
+      result = await axios(url, {
+        headers: {
+          Accept: "application/json",
+        },
+      });
     } catch (e) {
-        setError(e)
-        console.log(e);
+      setError(e)
+      console.log(e);
     }
     setJokes(result.data.joke);
+    setPocket(result.data);
   }
-
   useEffect(() => {
     getJokes()
   }, [])
 
   return (
     <div className="App">
-      <Header/>
-       <Stack
+      <Header />
+      <img src={banner} className='banner' />
+      <Stack
         direction="column"
         spacing={2}
         justifyContent="space-between"
@@ -49,9 +60,8 @@ const App = () => {
       <HeroBanner/>
       {/* Route 1 */}
       <JokeCard jokes={jokes} />
+        <Checkbox {...label} checked={checked} onChange={handleChange} icon={<FavoriteBorder />} checkedIcon={<Favorite />} />
       <Button variant="contained">New Joke</Button>
-      {/* Route 2 */}
-      {/* <Pocket/> */}
       </Stack>
 
 
