@@ -47,8 +47,11 @@ const App = () => {
       
         <Button variant="contained" sx={{ fontSize: "150%", width: "35%", fontWeight: "bold"  }}>POOF! You're a Sandwich</Button>
       <HeroBanner/>
+      {/* Route 1 */}
       <JokeCard jokes={jokes} />
       <Button variant="contained">New Joke</Button>
+      {/* Route 2 */}
+      {/* <Pocket/> */}
       </Stack>
 
 
