@@ -60,7 +60,7 @@ const App = () => {
           margin={2}
         >
 
-
+          {/* the below button is using the sx prop to use the theme we served to our theme provider */}
           <Button variant="contained" sx={(theme) => ({
             fontSize: "150%",
             width: "35%",
