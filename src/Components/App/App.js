@@ -19,7 +19,7 @@ function App() {
         alignItems="center"
         margin={2}
       >
-        <Button variant="contained" sx={{ fontSize: "200%", width: "33%"  }}>LameWire</Button>
+        <Button variant="contained" sx={{ fontSize: "150%", width: "35%", fontWeight: "bold"  }}>POOF! You're a Sandwich</Button>
         <HeroBanner/>
         <JokeCard/>
         <Button variant="contained">New Joke</Button>
