@@ -17,7 +17,6 @@ const App = () => {
   const [checked, setChecked] = useState(true);
   const handleChange = (event) => {
     setChecked(event.target.checked);
-
   };
   const [jokes, setJokes] = useState('')
   const [e, setError] = useState('')
@@ -36,12 +35,9 @@ const App = () => {
         setError(e)
         console.log(e);
     }
-    console.log('Result.data',result.data)
     setJokes(result.data.joke);
-    setPocket(result.data)
-
+    setPocket(result.data);
   }
-
   useEffect(() => {
     getJokes()
   }, [])
@@ -61,6 +57,7 @@ const App = () => {
       <JokeCard jokes={jokes} />
         <Checkbox {...label} checked={checked} onChange={handleChange} icon={<FavoriteBorder />} checkedIcon={<Favorite />} />
       <Button variant="contained">New Joke</Button>
+      {/* we need to pass pocket down to Pocket, and set Pockets state to include the checked joke and any jokes that were alrady a part of that state */}
       </Stack>
 
 
