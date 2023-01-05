@@ -39,7 +39,7 @@ const theme = createTheme();
 const label = { inputProps: { 'aria-label': 'Favorite button to put in pocket/saved jokes' } }
 
 
-export default function Album() {
+export default function Pocket() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />

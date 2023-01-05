@@ -70,7 +70,7 @@ const App = () => {
           <img src={banner} className='banner' />
             <HeroBanner/>
             <Routes>
-              <Route path='/' element={(<Home jokes={jokes}/>)} />
+              <Route path='/' element={(<Home jokes={jokes} pocket={pocket} getJokes={getJokes}/>)} />
               <Route path="/pocket" element={(<Pocket/>)} />
               <Route path="/about" element={(<About/>)} />
             </Routes>
