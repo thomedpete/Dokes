@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import Button from '@mui/material/Button';
+import { Routes, Route } from 'react-router-dom'
+
+import About from '../About/About';
 import Header from '../Header/Header';
 import HeroBanner from '../HeroBanner/HeroBanner';
+
 import JokeCard from '../JokeCard/JokeCard';
 import { Stack } from '@mui/material';
 import getAllJokes from '../../apiCalls'
@@ -12,17 +15,33 @@ import Favorite from '@mui/icons-material/Favorite';
 import { ThemeProvider } from '@mui/material';
 import banner from '../../assets/banner2.png'
 import theme from '../../theme';
-// import getAllJokes from '../../apiCalls'
+import Pocket from '../Pocket/Pocket'
+import Home from '../Home/Home'
+import Link from '@mui/material/Link';
+import Typography from '@mui/material/Typography';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+import Box from '@mui/material/Box';
+import banner from '../../assets/banner3.png'
 import './App.css';
 
-const label = { inputProps: { 'aria-label': 'Favorite button to put in pocket/saved jokes' } }
+const Copyright = () => {
+  return (
+    <Typography variant="body2" color="text.secondary" align="center">
+      {'Copyright © '}
+      <Link color="inherit" href="https://mui.com/">
+        Your Website
+      </Link>{' '}
+      {new Date().getFullYear()}
+      {'.'}
+    </Typography>
+  );
+}
+
+const theme = createTheme();
 
 const App = () => {
 
-  const [checked, setChecked] = useState(true);
-  const handleChange = (event) => {
-    setChecked(event.target.checked);
-  };
   const [jokes, setJokes] = useState('')
   const [e, setError] = useState('')
   const [pocket, setPocket] = useState([])
@@ -48,32 +67,32 @@ const App = () => {
   }, [])
 
   return (
-    <ThemeProvider theme={theme}>
-      <div className="App">
-        <Header />
-        <img src={banner} className='banner' />
-        <Stack
-          direction="column"
-          spacing={2}
-          justifyContent="space-between"
-          alignItems="center"
-          margin={2}
-        >
+    <ThemeProvider theme={theme}> 
+        <div className="App">
+          <Header />
+          <img src={banner} className='banner' />
+            <HeroBanner/>
+            <Routes>
+              <Route path='/' element={(<Home jokes={jokes}/>)} />
+              <Route path="/pocket" element={(<Pocket/>)} />
+              <Route path="/about" element={(<About/>)} />
+            </Routes>
+        </div>
 
-          {/* the below button is using the sx prop to use the theme we served to our theme provider */}
-          <Button variant="contained" sx={(theme) => ({
-            fontSize: "150%",
-            width: "35%",
-            fontWeight: "bold",
-            bgcolor: 'secondary.main'
-          })}>POOF! You're a Sandwich</Button>
-          <HeroBanner />
-          <JokeCard jokes={jokes} />
-          <Checkbox {...label} checked={checked} onChange={handleChange} icon={<FavoriteBorder />} checkedIcon={<Favorite />} />
-          <Button variant="contained" >New Joke</Button>
-          {/* we need to pass pocket down to Pocket, and set Pockets state to include the checked joke and any jokes that were alrady a part of that state */}
-        </Stack>
-      </div>
+      <Box sx={{ bgcolor: 'background.paper', p: 6 }} component="footer">
+        <Typography variant="h6" align="center" gutterBottom>
+          Footer
+        </Typography>
+        <Typography
+          variant="subtitle1"
+          align="center"
+          color="text.secondary"
+          component="p"
+        >
+          Something here to give the footer a purpose!
+        </Typography>
+        <Copyright />
+      </Box>
     </ThemeProvider>
   );
 }

@@ -5,3 +5,7 @@
     width: 100%;
     /* background-color: gainsboro; */
 }
+
+.jokes {
+    opacity: 0;
+}

@@ -2,18 +2,34 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import MenuIcon from '@mui/icons-material/Menu';
 import AppBar from '@mui/material/AppBar'
 import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
+import { Link, withRouter } from 'react-router-dom';
 
 
+// const options = [
+//   'Home',
+//   'Pocket',
+//   'About',
+// ];
+
+// alt for options w/ routes
 const options = [
-  'Home',
-  'Pocket',
-  'About',
+    {
+        path: '/',
+        text: 'Home'
+    },
+    {
+        path: '/pocket',
+        text: 'Pocket'
+    },
+    {
+        path: '/about',
+        text: 'About'
+    }
 ];
 
 const ITEM_HEIGHT = 48;
@@ -59,8 +75,8 @@ const Header = () => {
             }}
           >
             {options.map((option) => (
-              <MenuItem key={option} selected={option === 'Pyxis'} onClick={handleClose}>
-                {option}
+              <MenuItem key={option.path} selected={option === 'Pyxis'} onClick={handleClose}>
+                <Link to={option.path}>{option.text}</Link>
               </MenuItem>
             ))}
           </Menu>
