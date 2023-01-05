@@ -8,6 +8,7 @@ import JokeCard from '../JokeCard/JokeCard';
 import Pocket from '../Pocket/Pocket'
 import Link from '@mui/material/Link';
 import { Stack } from '@mui/material';
+
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -15,10 +16,11 @@ import Box from '@mui/material/Box';
 import { Routes, Route } from 'react-router-dom'
 
 import getAllJokes from '../../apiCalls'
+
 import Checkbox from '@mui/material/Checkbox';
 import FavoriteBorder from '@mui/icons-material/FavoriteBorder';
 import Favorite from '@mui/icons-material/Favorite';
-import banner from '../../assets/banner2.png'
+import banner from '../../assets/banner3.png'
 // import getAllJokes from '../../apiCalls'
 import './App.css';
 
@@ -70,6 +72,7 @@ const App = () => {
   }, [])
 
   return (
+
     <ThemeProvider theme={theme}>
       <CssBaseline />
         <div className="App">
