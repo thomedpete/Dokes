@@ -39,7 +39,7 @@ const Copyright = () => {
 
 const App = () => {
 
-  const [jokes, setJokes] = useState('')
+  const [jokes, setJokes] = useState({})
   const [e, setError] = useState('')
 
   const getJokes = async () => {
@@ -55,7 +55,7 @@ const App = () => {
       setError(e)
       console.log(e);
     }
-    setJokes(result.data.joke);
+    setJokes(result.data);
     // setPocket(result.data);
   }
   useEffect(() => {
