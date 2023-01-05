@@ -1,4 +1,5 @@
-import * as React from 'react';
+import React, { useEffect, useState } from 'react';
+// import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Button from '@mui/material/Button';
 import CameraIcon from '@mui/icons-material/PhotoCamera';
@@ -39,7 +40,10 @@ const theme = createTheme();
 const label = { inputProps: { 'aria-label': 'Favorite button to put in pocket/saved jokes' } }
 
 
-export default function Pocket() {
+const Pocket = () => {
+
+  const [pocket, setPocket] = useState([]) // POCKET RENDER
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -90,3 +94,5 @@ export default function Pocket() {
     </ThemeProvider>
   );
 }
+
+export default Pocket

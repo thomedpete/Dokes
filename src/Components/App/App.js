@@ -41,7 +41,6 @@ const App = () => {
 
   const [jokes, setJokes] = useState('')
   const [e, setError] = useState('')
-  const [pocket, setPocket] = useState([])
 
   const getJokes = async () => {
     let url = "https://icanhazdadjoke.com/";
@@ -57,7 +56,7 @@ const App = () => {
       console.log(e);
     }
     setJokes(result.data.joke);
-    setPocket(result.data);
+    // setPocket(result.data);
   }
   useEffect(() => {
     getJokes()
@@ -70,7 +69,7 @@ const App = () => {
           <img src={banner} className='banner' />
             <HeroBanner/>
             <Routes>
-              <Route path='/' element={(<Home jokes={jokes} pocket={pocket} getJokes={getJokes}/>)} />
+              <Route path='/' element={(<Home jokes={jokes} getJokes={getJokes}/>)} />
               <Route path="/pocket" element={(<Pocket/>)} />
               <Route path="/about" element={(<About/>)} />
             </Routes>

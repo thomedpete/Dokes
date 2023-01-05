@@ -16,6 +16,7 @@ const Home = ({ jokes, pocket, getJokes }) => {
     const [checked, setChecked] = useState(false);
     const [unchecked, setUnChecked] = useState(true);
     const handleChange = (event) => {
+        console.log(event)
         if(event.target.checked) {
             setChecked(!event.target.checked);
         } else {
@@ -24,8 +25,16 @@ const Home = ({ jokes, pocket, getJokes }) => {
     };
 
     const storage = () => {
-        localStorage.setItem('pocket', (pocket.joke));
-        localStorage.setItem('id', pocket.id);
+        console.log('pocket', pocket)
+        let items = []
+        items.push(pocket)
+        console.log(pocket)
+        localStorage.setItem('pocket', JSON.stringify(items));
+    }
+
+    const storedItems = () => {
+        return JSON.parse(localStorage.getItem('pocket'));
+
     }
 
     const handleFavJoke = (event) => {
@@ -48,7 +57,7 @@ const Home = ({ jokes, pocket, getJokes }) => {
                 margin={2}
                 >
                 <JokeCard jokes={jokes} />
-                <Checkbox {...label} checked={checked} onChange={handleFavJoke} icon={<FavoriteBorder />} checkedIcon={<Favorite />} />
+                <Checkbox {...label} checked={checked} onChange={handleFavJoke} icon={<FavoriteBorder />} checkedIcon={<Favorite />} ></Checkbox>
                 <Button variant='contained' onClick={() => getJokes()}>New Joke</Button>
             </Stack>
         </div>
