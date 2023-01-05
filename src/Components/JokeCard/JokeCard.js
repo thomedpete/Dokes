@@ -7,6 +7,7 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import "./JokeCard.css"
 import { Stack } from '@mui/material';
+import theme from '../../theme';
 
 
 
@@ -14,7 +15,7 @@ const JokeCard = ({ jokes }) => {
 
   return (
     <div className='card-container'>
-      <Card sx={{ maxWidth: '60%', backgroundColor: "lightsteelblue" }}>
+      <Card sx={{ maxWidth: '60%' }}>
         <Stack
           direction="column"
           spacing={2}
@@ -22,7 +23,9 @@ const JokeCard = ({ jokes }) => {
           alignItems="center"
         >
           <CardContent>
-            <Card sx={{ backgroundColor: "#1976d2" }}>
+            <Card sx={(theme) => ({
+              bgcolor: 'primary.dark'
+            })}>
               <Typography m="2.55%" gutterBottom variant="h5" color="gainsboro">
                 {jokes}
               </Typography>

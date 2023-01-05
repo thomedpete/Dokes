@@ -64,10 +64,10 @@ const Header = () => {
               </MenuItem>
             ))}
           </Menu>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1, color: 'white', textTransform: 'uppercase' }}>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1, color: 'black', textTransform: 'uppercase' }}>
             Welcome to DOKES
           </Typography>
-          <Typography component='p' sx={{ flexGrow: 1, color: 'white' }}>
+          <Typography component='p' sx={{ flexGrow: 1, color: 'black' }}>
             Dad Joke Generator
           </Typography>
         </Toolbar>
