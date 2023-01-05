@@ -1,30 +1,24 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Routes, Route } from 'react-router-dom'
+
 import About from '../About/About';
-import Button from '@mui/material/Button';
 import Header from '../Header/Header';
 import HeroBanner from '../HeroBanner/HeroBanner';
-import JokeCard from '../JokeCard/JokeCard';
 import Pocket from '../Pocket/Pocket'
-import Link from '@mui/material/Link';
-import { Stack } from '@mui/material';
+import Home from '../Home/Home'
 
+import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
-import { Routes, Route } from 'react-router-dom'
 
-import getAllJokes from '../../apiCalls'
 
-import Checkbox from '@mui/material/Checkbox';
-import FavoriteBorder from '@mui/icons-material/FavoriteBorder';
-import Favorite from '@mui/icons-material/Favorite';
 import banner from '../../assets/banner3.png'
-// import getAllJokes from '../../apiCalls'
 import './App.css';
 
-function Copyright() {
+const Copyright = () => {
   return (
     <Typography variant="body2" color="text.secondary" align="center">
       {'Copyright © '}
@@ -39,14 +33,7 @@ function Copyright() {
 
 const theme = createTheme();
 
-
-const label = { inputProps: { 'aria-label': 'Favorite button to put in pocket/saved jokes' } }
-
 const App = () => {
-  const [checked, setChecked] = useState(true);
-  const handleChange = (event) => {
-    setChecked(event.target.checked);
-  };
   const [jokes, setJokes] = useState('')
   const [e, setError] = useState('')
   const [pocket, setPocket] = useState([])
@@ -72,33 +59,19 @@ const App = () => {
   }, [])
 
   return (
-
     <ThemeProvider theme={theme}>
       <CssBaseline />
         <div className="App">
           <Header />
           <img src={banner} className='banner' />
-          <Stack
-            direction="column"
-            spacing={2}
-            justifyContent="space-between"
-            alignItems="center"
-            margin={2}
-          >
             <HeroBanner/>
             <Routes>
-              <Route path="/" element={(
-                  <JokeCard jokes={jokes} />,
-                  <Checkbox {...label} checked={checked} onChange={handleChange} icon={<FavoriteBorder />} checkedIcon={<Favorite />} />,
-                  <Button variant="contained">New Joke</Button>
-              )}
-              />
+              <Route path='/' element={(<Home jokes={jokes}/>)} />
               <Route path="/pocket" element={(<Pocket/>)} />
               <Route path="/about" element={(<About/>)} />
             </Routes>
-          </Stack>
         </div>
-  {/* Footer */}
+
       <Box sx={{ bgcolor: 'background.paper', p: 6 }} component="footer">
         <Typography variant="h6" align="center" gutterBottom>
           Footer
@@ -113,7 +86,6 @@ const App = () => {
         </Typography>
         <Copyright />
       </Box>
-  {/* End footer */}
     </ThemeProvider>
   );
 }
