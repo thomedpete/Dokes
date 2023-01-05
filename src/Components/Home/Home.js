@@ -14,13 +14,26 @@ const Home = ({ jokes, pocket, getJokes }) => {
     const label = { inputProps: { 'aria-label': 'Favorite button to put in pocket/saved jokes' } }
 
     const [checked, setChecked] = useState(false);
+    const [unchecked, setUnChecked] = useState(true);
     const handleChange = (event) => {
-        setChecked(event.target.checked);
+        if(event.target.checked) {
+            setChecked(!event.target.checked);
+        } else {
+            setChecked(event.target.checked);
+        }
     };
 
     const storage = () => {
-        localStorage.setItem('pocket', pocket.joke);
+        localStorage.setItem('pocket', (pocket.joke));
         localStorage.setItem('id', pocket.id);
+    }
+
+    const handleFavJoke = (event) => {
+        if(event.target.checked) {
+            handleChange(event);
+            storage();
+            
+        }
     }
 
     const pocketItems = localStorage.getItem(pocket);
@@ -35,7 +48,7 @@ const Home = ({ jokes, pocket, getJokes }) => {
                 margin={2}
                 >
                 <JokeCard jokes={jokes} />
-                <Checkbox {...label} checked={checked} onChange={handleChange} icon={<FavoriteBorder />} checkedIcon={<Favorite />} />
+                <Checkbox {...label} checked={checked} onChange={handleFavJoke} icon={<FavoriteBorder />} checkedIcon={<Favorite />} />
                 <Button variant='contained' onClick={() => getJokes()}>New Joke</Button>
             </Stack>
         </div>
