@@ -7,12 +7,15 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { red } from '@mui/material/colors';
 import './HeroBanner.css'
+import theme from '../../theme';
 
 const HeroBanner = () => {
   return (
   <div className='hero-container'>
 
-      <Card sx={{ maxWidth: '100%', backgroundColor:"cornflowerblue" }}>
+      <Card sx={(theme) => ({
+        bgcolor: 'secondary.main'
+      })}>
         {/* <CardMedia
 
           sx={{ height: 100 }}

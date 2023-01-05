@@ -5,16 +5,23 @@ import { Routes, Route } from 'react-router-dom'
 import About from '../About/About';
 import Header from '../Header/Header';
 import HeroBanner from '../HeroBanner/HeroBanner';
+
+import JokeCard from '../JokeCard/JokeCard';
+import { Stack } from '@mui/material';
+import getAllJokes from '../../apiCalls'
+import Checkbox from '@mui/material/Checkbox';
+import FavoriteBorder from '@mui/icons-material/FavoriteBorder';
+import Favorite from '@mui/icons-material/Favorite';
+import { ThemeProvider } from '@mui/material';
+import banner from '../../assets/banner2.png'
+import theme from '../../theme';
 import Pocket from '../Pocket/Pocket'
 import Home from '../Home/Home'
-
 import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
-
-
 import banner from '../../assets/banner3.png'
 import './App.css';
 
@@ -34,6 +41,7 @@ const Copyright = () => {
 const theme = createTheme();
 
 const App = () => {
+
   const [jokes, setJokes] = useState('')
   const [e, setError] = useState('')
   const [pocket, setPocket] = useState([])
@@ -59,8 +67,7 @@ const App = () => {
   }, [])
 
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
+    <ThemeProvider theme={theme}> 
         <div className="App">
           <Header />
           <img src={banner} className='banner' />

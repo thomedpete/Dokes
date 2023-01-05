@@ -4,6 +4,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import { Stack } from '@mui/material';
+import theme from '../../theme';
 
 import { TweenMax, Power3 } from 'gsap'
 
@@ -18,7 +19,7 @@ const JokeCard = ({ jokes }) => {
 
   return (
     <div className='card-container'>
-      <Card sx={{ maxWidth: '60%', backgroundColor: "lightsteelblue" }}>
+      <Card sx={{ maxWidth: '60%' }}>
         <Stack
           direction="column"
           spacing={2}
@@ -26,8 +27,12 @@ const JokeCard = ({ jokes }) => {
           alignItems="center"
         >
           <CardContent>
-            <Card sx={{ backgroundColor: "#1976d2" }}>
-              <Typography className='jokes' m="2.55%" gutterBottom variant="h5" color="gainsboro" ref={el => {jokeText = el}}>
+
+            <Card sx={(theme) => ({
+              bgcolor: 'primary.dark'
+            })}>
+              <Typography m="2.55%" gutterBottom variant="h5" color="gainsboro">
+
                 {jokes}
               </Typography>
             </Card>
