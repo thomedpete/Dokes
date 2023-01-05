@@ -12,8 +12,7 @@ import getAllJokes from '../../apiCalls'
 import Checkbox from '@mui/material/Checkbox';
 import FavoriteBorder from '@mui/icons-material/FavoriteBorder';
 import Favorite from '@mui/icons-material/Favorite';
-import { ThemeProvider } from '@mui/material';
-import banner from '../../assets/banner2.png'
+// import banner from '../../assets/banner2.png'
 import theme from '../../theme';
 import Pocket from '../Pocket/Pocket'
 import Home from '../Home/Home'
@@ -37,8 +36,6 @@ const Copyright = () => {
     </Typography>
   );
 }
-
-const theme = createTheme();
 
 const App = () => {
 
