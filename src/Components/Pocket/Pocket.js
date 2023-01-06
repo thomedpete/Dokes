@@ -40,11 +40,11 @@ const theme = createTheme();
 const label = { inputProps: { 'aria-label': 'Favorite button to put in pocket/saved jokes' } }
 
 
-const Pocket = ({ pocket }) => {
+const Pocket = ({ pocket, deleteJoke }) => {
 
-  const deleteJoke = () => {
-    console.log('DELETE')
-  }
+  // const deleteJoke = () => {
+  //   console.log('DELETE')
+  // }
 
   // add some kind of 'hey, no jokes! add some' prompt when fresh/empty
 
