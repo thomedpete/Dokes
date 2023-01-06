@@ -10,7 +10,7 @@ import FavoriteBorder from '@mui/icons-material/FavoriteBorder';
 import Favorite from '@mui/icons-material/Favorite';
 
 
-import { TweenMax, Power3 } from 'gsap'
+import { gsap , Power3 } from 'gsap'
 
 import "./JokeCard.css"
 
@@ -20,7 +20,7 @@ const JokeCard = ({ jokes, addJoke }) => {
 
 
   useEffect(() => {
-    TweenMax.to(jokeText, .8, { opacity: 1, y: -10, ease: Power3.easeOut })
+    gsap.to(jokeText, .8, { opacity: 1, y: -5, ease: Power3.easeOut })
   }, [])
 
   return (
@@ -37,8 +37,7 @@ const JokeCard = ({ jokes, addJoke }) => {
             <Card sx={(theme) => ({
               bgcolor: 'primary.dark'
             })}>
-              <Typography m="2.55%" gutterBottom variant="h5" color="gainsboro">
-
+              <Typography m="2.55%" className='jokes' gutterBottom variant="h5" color="gainsboro" ref={el => {jokeText =el}}>
                 {jokes.joke}
               </Typography>
               <Button variant="contained" color="success" onClick={() => addJoke(jokes)}>
