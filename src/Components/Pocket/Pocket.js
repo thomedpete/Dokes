@@ -40,9 +40,11 @@ const theme = createTheme();
 const label = { inputProps: { 'aria-label': 'Favorite button to put in pocket/saved jokes' } }
 
 
-const Pocket = () => {
+const Pocket = ({ pocket }) => {
 
-  const [pocket, setPocket] = useState([]) // POCKET RENDER
+  const deleteJoke = () => {
+    console.log('DELETE')
+  }
 
   return (
     <ThemeProvider theme={theme}>
@@ -51,8 +53,8 @@ const Pocket = () => {
         <Container sx={{ py: 8 }} maxWidth="md">
           {/* End hero unit */}
           <Grid container spacing={4}>
-            {cards.map((card) => (
-              <Grid item key={card} xs={12} sm={6} md={4}>
+            {pocket.map((joke) => (
+              <Grid item key={joke.id} xs={12} sm={6} md={4}>
                  <Card sx={{ maxWidth: '60%', backgroundColor: "lightsteelblue" }}>
                   <Stack
                     direction="column"
@@ -61,15 +63,20 @@ const Pocket = () => {
                     alignItems="center"
                   >
                     <CardContent>
-                      <Card sx={{ backgroundColor: "#1976d2" }}>
+                      <Card sx={(theme) => ({
+                        bgcolor: 'primary.dark'
+                      })}>
                         <Typography m="2.55%" gutterBottom variant="h5" color="gainsboro">
-                          I am a Dad joke from Dokes
+
+                          {joke.joke}
                         </Typography>
+                        <Button variant="contained" color="success" onClick={() => deleteJoke(joke)}>
+                          Delete
+                        </Button>
                       </Card>
                     </CardContent>
                   </Stack>
                 </Card>
-                <Checkbox {...label} checked={true}  icon={<FavoriteBorder />} checkedIcon={<Favorite />} />
               </Grid>
             ))}
           </Grid>

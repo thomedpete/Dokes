@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-
+import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
@@ -14,7 +14,7 @@ import { TweenMax, Power3 } from 'gsap'
 
 import "./JokeCard.css"
 
-const JokeCard = ({ jokes }) => {
+const JokeCard = ({ jokes, handleChange }) => {
   let jokeText = useRef(null)
     const label = { inputProps: { 'aria-label': 'Favorite button to put in pocket/saved jokes' } }
 
@@ -22,10 +22,6 @@ const JokeCard = ({ jokes }) => {
   useEffect(() => {
     TweenMax.to(jokeText, .8, { opacity: 1, y: -10, ease: Power3.easeOut })
   }, [])
-
-  const handleChange = (id) => {
-    console.log(id)
-  }
 
   return (
     <div className='card-container'>
@@ -45,7 +41,9 @@ const JokeCard = ({ jokes }) => {
 
                 {jokes.joke}
               </Typography>
-                <Checkbox {...label} icon={<FavoriteBorder />} checkedIcon={<Favorite id={jokes.id}/>} >{console.log(jokes.id)}</Checkbox>
+              <Button variant="contained" color="success" onClick={() => handleChange(jokes)}>
+                Save
+              </Button>
             </Card>
           </CardContent>
         </Stack>

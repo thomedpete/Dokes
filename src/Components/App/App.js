@@ -41,6 +41,7 @@ const App = () => {
 
   const [jokes, setJokes] = useState({})
   const [e, setError] = useState('')
+  const [pocket, setPocket] = useState([])
 
   const getJokes = async () => {
     let url = "https://icanhazdadjoke.com/";
@@ -56,11 +57,16 @@ const App = () => {
       console.log(e);
     }
     setJokes(result.data);
-    // setPocket(result.data);
   }
   useEffect(() => {
     getJokes()
   }, [])
+
+  const handleChange = (joke) => {
+    // console.log(joke)
+    // put into pocket state
+    setPocket([...pocket, joke]);
+  }
 
   return (
     <ThemeProvider theme={theme}> 
@@ -69,8 +75,8 @@ const App = () => {
           <img src={banner} className='banner' />
             <HeroBanner/>
             <Routes>
-              <Route path='/' element={(<Home jokes={jokes} getJokes={getJokes}/>)} />
-              <Route path="/pocket" element={(<Pocket/>)} />
+              <Route path='/' element={(<Home jokes={jokes} getJokes={getJokes} handleChange={handleChange}/>)} />
+              <Route path="/pocket" element={(<Pocket pocket={pocket}/>)}/>
               <Route path="/about" element={(<About/>)} />
             </Routes>
         </div>
