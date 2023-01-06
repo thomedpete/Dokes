@@ -2,26 +2,21 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Routes, Route } from 'react-router-dom'
 
+import { gsap } from 'gsap'
+
 import About from '../About/About';
 import Header from '../Header/Header';
-import HeroBanner from '../HeroBanner/HeroBanner';
+import Home from '../Home/Home'
 
-import JokeCard from '../JokeCard/JokeCard';
-import { Stack } from '@mui/material';
-import getAllJokes from '../../apiCalls'
-import Checkbox from '@mui/material/Checkbox';
-import FavoriteBorder from '@mui/icons-material/FavoriteBorder';
-import Favorite from '@mui/icons-material/Favorite';
-// import banner from '../../assets/banner2.png'
 import theme from '../../theme';
 import Pocket from '../Pocket/Pocket'
-import Home from '../Home/Home'
 import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
-import banner from '../../assets/DADJOKE.png'
+
+import banner from '../../assets/DADJOKE2.png'
 import './App.css';
 
 const Copyright = () => {
@@ -74,12 +69,24 @@ const App = () => {
     setPocket([...deletion])
   }
 
+  gsap.to('.dadLogo', { 
+    rotation: 360,
+    x: '40vw',
+    xPercent: -100,
+    // special properties
+    duration: 2, // how long the animation lasts
+    repeat: -1, // the number of repeats - this will play 3 times
+    yoyo: true, // this will alternate back and forth on each repeat. Like a yoyo
+  });
+
   return (
     <ThemeProvider theme={theme}> 
         <div className="App">
           <Header />
-          <img src={banner} className='banner' />
-            <HeroBanner/>
+          <div className='logo-container'>
+            <img src={banner} className='dadLogo' />
+          </div>
+          {e && e}
             <Routes>
               <Route path='/' element={(<Home jokes={jokes} getJokes={getJokes} addJoke={addJoke}/>)} />
               <Route path="/pocket" element={(<Pocket pocket={pocket} deleteJoke={deleteJoke}/>)} />

@@ -2,6 +2,19 @@
   text-align: center;
 }
 
-.banner {
+.logo-container {
+  display: flex;
+  flex-direction: row;
   justify-content: center;
-}  
+  width: 800px;
+}
+
+.dadLogo {
+  align-self: center;
+}
+
+.dokes {
+  stroke: yellow;
+  stroke-width: 2px;
+  fill: none;
+}
