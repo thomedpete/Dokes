@@ -71,6 +71,11 @@ const App = () => {
     setPocket([...pocket, joke]);
   }
 
+  const deleteJoke = (event, joke) => {
+    const deletion = pocket.filter(item => item.id !== event.id)
+    setPocket([...deletion])
+  }
+
   return (
     <ThemeProvider theme={theme}> 
         <div className="App">
@@ -79,7 +84,7 @@ const App = () => {
             <HeroBanner/>
             <Routes>
               <Route path='/' element={(<Home jokes={jokes} getJokes={getJokes} addJoke={addJoke}/>)} />
-              <Route path="/pocket" element={(<Pocket pocket={pocket}/>)}/>
+              <Route path="/pocket" element={(<Pocket pocket={pocket} deleteJoke={deleteJoke}/>)} />
               <Route path="/about" element={(<About/>)} />
             </Routes>
         </div>
