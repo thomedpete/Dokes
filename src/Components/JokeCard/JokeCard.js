@@ -4,14 +4,14 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import { Stack } from '@mui/material';
-import theme from '../../theme';
-import Checkbox from '@mui/material/Checkbox';
-import FavoriteBorder from '@mui/icons-material/FavoriteBorder';
-import Favorite from '@mui/icons-material/Favorite';
-
+// import theme from '../../theme';
+// import Checkbox from '@mui/material/Checkbox';
+// import FavoriteBorder from '@mui/icons-material/FavoriteBorder';
+// import Favorite from '@mui/icons-material/Favorite';
 
 import { gsap , Power3 } from 'gsap'
 
+import background from '../../assets/dadJoke-background1.png'
 import "./JokeCard.css"
 
 const JokeCard = ({ jokes, addJoke }) => {
@@ -25,28 +25,31 @@ const JokeCard = ({ jokes, addJoke }) => {
 
   return (
     <div className='card-container'>
-      <Card sx={{ maxWidth: '60%' }}>
+      {/* <Card sx={{ maxWidth: '60%' }}> */}
         <Stack
           direction="column"
           spacing={2}
           justifyContent="space-between"
           alignItems="center"
         >
-          <CardContent>
+          {/* <CardContent>
 
             <Card sx={(theme) => ({
               bgcolor: 'primary.dark'
-            })}>
-              <Typography m="2.55%" className='jokes' gutterBottom variant="h5" color="gainsboro" ref={el => {jokeText =el}}>
+            })}> */}
+            <article className='joke-container'>
+                <img src={background} alt="background" className='joke-background' />
+                <Typography m="2.55%" className='jokes' gutterBottom variant="h5" color="gainsboro" ref={el => {jokeText =el}}>
                 {jokes.joke}
-              </Typography>
+                </Typography>
+            </article>
               <Button variant="contained" color="success" onClick={() => addJoke(jokes)}>
                 Save
               </Button>
-            </Card>
-          </CardContent>
+            {/* </Card>
+          </CardContent> */}
         </Stack>
-      </Card>
+      {/* </Card> */}
     </div>
   );
 }
