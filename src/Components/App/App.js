@@ -21,7 +21,7 @@ import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
-import banner from '../../assets/banner3.png'
+import banner from '../../assets/DADJOKE.png'
 import './App.css';
 
 const Copyright = () => {
@@ -66,8 +66,6 @@ const App = () => {
     console.log('joke', joke)
     console.log('pocket', pocket)
     if(!pocket.some(item => item.id === joke.id))
-    // put into pocket state
-    // if(!joke.id === )
     setPocket([...pocket, joke]);
   }
 
