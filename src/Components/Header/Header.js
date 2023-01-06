@@ -77,11 +77,12 @@ const Header = () => {
               </MenuItem>
             ))}
           </Menu>
-          <Typography variant="h3" className='dokes' component="div" sx={{ flexGrow: 1, color: 'black', fontStyle: 'bold' }}>
+          <Typography variant="h3" className='dokes' component="div" sx={(theme) => ({
+              typography: 'Anton, sans-serif', flexGrow: 1, color: 'black', fontStyle: 'bold'
+            })} >
             dokes
           </Typography>
           <Typography component='p' className='dokes' sx={{ flexGrow: 1, color: 'black' }}>
-
           </Typography>
         </Toolbar>
       </AppBar>
