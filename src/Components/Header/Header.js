@@ -9,6 +9,10 @@ import MenuItem from '@mui/material/MenuItem';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { Link } from 'react-router-dom';
 
+// import dokes from '../../assets/dokes-title.png'
+// import logo from '../../assets/DADJOKE.png'
+
+import './Header.css'
 
 const options = [
     {
@@ -39,7 +43,7 @@ const Header = () => {
 
 
   return (
-    <Box className='header' sx={{ flexGrow: 1 }}>
+    <Box className='header-container' sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
           <IconButton
@@ -73,11 +77,11 @@ const Header = () => {
               </MenuItem>
             ))}
           </Menu>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1, color: 'black', textTransform: 'uppercase' }}>
-            Welcome to DOKES
+          <Typography variant="h3" className='dokes' component="div" sx={{ flexGrow: 1, color: 'black', fontStyle: 'bold' }}>
+            dokes
           </Typography>
-          <Typography component='p' sx={{ flexGrow: 1, color: 'black' }}>
-            Dad Joke Generator
+          <Typography component='p' className='dokes' sx={{ flexGrow: 1, color: 'black' }}>
+
           </Typography>
         </Toolbar>
       </AppBar>
