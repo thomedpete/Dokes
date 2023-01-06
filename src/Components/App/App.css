@@ -1,8 +1,20 @@
 .App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
 }
 
-.banner {
-  justify-content: center;
-  width: 100%;
-}  
+.logo-container {
+  width: 70%;
+}
+
+.dadLogo {
+  align-self: center;
+}
+
+.dokes {
+  stroke: yellow;
+  stroke-width: 2px;
+  fill: none;
+}
