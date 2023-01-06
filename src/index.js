@@ -5,7 +5,6 @@ import App from './Components/App/App';
 import { BrowserRouter } from 'react-router-dom';
 
 import reportWebVitals from './reportWebVitals';
-
 const router = <BrowserRouter> <App /> </BrowserRouter>;
 
 
