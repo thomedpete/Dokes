@@ -46,6 +46,8 @@ const Pocket = ({ pocket }) => {
     console.log('DELETE')
   }
 
+  // add some kind of 'hey, no jokes! add some' prompt when fresh/empty
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />

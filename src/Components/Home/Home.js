@@ -9,7 +9,7 @@ import { Routes, Route } from 'react-router-dom'
 
 import JokeCard from '../JokeCard/JokeCard';
 
-const Home = ({ jokes, pocket, getJokes, handleChange }) => {
+const Home = ({ jokes, pocket, getJokes, addJoke }) => {
 
     return (
         <div>
@@ -20,7 +20,7 @@ const Home = ({ jokes, pocket, getJokes, handleChange }) => {
                 alignItems="center"
                 margin={2}
                 >
-                <JokeCard jokes={jokes} handleChange={handleChange}/>
+                <JokeCard jokes={jokes} addJoke={addJoke}/>
                 <Button variant='contained' onClick={() => getJokes()}>New Joke</Button>
             </Stack>
         </div>

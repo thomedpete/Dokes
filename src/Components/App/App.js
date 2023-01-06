@@ -62,9 +62,12 @@ const App = () => {
     getJokes()
   }, [])
 
-  const handleChange = (joke) => {
-    // console.log(joke)
+  const addJoke = (joke) => {
+    console.log('joke', joke)
+    console.log('pocket', pocket)
+    if(!pocket.some(item => item.id === joke.id))
     // put into pocket state
+    // if(!joke.id === )
     setPocket([...pocket, joke]);
   }
 
@@ -75,7 +78,7 @@ const App = () => {
           <img src={banner} className='banner' />
             <HeroBanner/>
             <Routes>
-              <Route path='/' element={(<Home jokes={jokes} getJokes={getJokes} handleChange={handleChange}/>)} />
+              <Route path='/' element={(<Home jokes={jokes} getJokes={getJokes} addJoke={addJoke}/>)} />
               <Route path="/pocket" element={(<Pocket pocket={pocket}/>)}/>
               <Route path="/about" element={(<About/>)} />
             </Routes>

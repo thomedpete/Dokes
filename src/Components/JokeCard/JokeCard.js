@@ -14,7 +14,7 @@ import { TweenMax, Power3 } from 'gsap'
 
 import "./JokeCard.css"
 
-const JokeCard = ({ jokes, handleChange }) => {
+const JokeCard = ({ jokes, addJoke }) => {
   let jokeText = useRef(null)
     const label = { inputProps: { 'aria-label': 'Favorite button to put in pocket/saved jokes' } }
 
@@ -41,7 +41,7 @@ const JokeCard = ({ jokes, handleChange }) => {
 
                 {jokes.joke}
               </Typography>
-              <Button variant="contained" color="success" onClick={() => handleChange(jokes)}>
+              <Button variant="contained" color="success" onClick={() => addJoke(jokes)}>
                 Save
               </Button>
             </Card>
