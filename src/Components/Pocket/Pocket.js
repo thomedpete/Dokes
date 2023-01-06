@@ -1,4 +1,5 @@
-import * as React from 'react';
+import React, { useEffect, useState } from 'react';
+// import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Button from '@mui/material/Button';
 import CameraIcon from '@mui/icons-material/PhotoCamera';
@@ -39,7 +40,14 @@ const theme = createTheme();
 const label = { inputProps: { 'aria-label': 'Favorite button to put in pocket/saved jokes' } }
 
 
-export default function Album() {
+const Pocket = ({ pocket }) => {
+
+  const deleteJoke = () => {
+    console.log('DELETE')
+  }
+
+  // add some kind of 'hey, no jokes! add some' prompt when fresh/empty
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -47,8 +55,8 @@ export default function Album() {
         <Container sx={{ py: 8 }} maxWidth="md">
           {/* End hero unit */}
           <Grid container spacing={4}>
-            {cards.map((card) => (
-              <Grid item key={card} xs={12} sm={6} md={4}>
+            {pocket.map((joke) => (
+              <Grid item key={joke.id} xs={12} sm={6} md={4}>
                  <Card sx={{ maxWidth: '60%', backgroundColor: "lightsteelblue" }}>
                   <Stack
                     direction="column"
@@ -57,15 +65,20 @@ export default function Album() {
                     alignItems="center"
                   >
                     <CardContent>
-                      <Card sx={{ backgroundColor: "#1976d2" }}>
+                      <Card sx={(theme) => ({
+                        bgcolor: 'primary.dark'
+                      })}>
                         <Typography m="2.55%" gutterBottom variant="h5" color="gainsboro">
-                          I am a Dad joke from Dokes
+
+                          {joke.joke}
                         </Typography>
+                        <Button variant="contained" color="success" onClick={() => deleteJoke(joke)}>
+                          Delete
+                        </Button>
                       </Card>
                     </CardContent>
                   </Stack>
                 </Card>
-                <Checkbox {...label} checked={true}  icon={<FavoriteBorder />} checkedIcon={<Favorite />} />
               </Grid>
             ))}
           </Grid>
@@ -90,3 +103,5 @@ export default function Album() {
     </ThemeProvider>
   );
 }
+
+export default Pocket
