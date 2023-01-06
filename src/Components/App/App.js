@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Routes, Route } from 'react-router-dom'
 
-import { gsap } from 'gsap'
-
 import About from '../About/About';
 import Header from '../Header/Header';
 import Home from '../Home/Home'
@@ -16,7 +14,6 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
 
-import banner from '../../assets/DADJOKE2.png'
 import './App.css';
 
 const Copyright = () => {
@@ -69,23 +66,10 @@ const App = () => {
     setPocket([...deletion])
   }
 
-  gsap.to('.dadLogo', { 
-    rotation: 360,
-    x: '40vw',
-    xPercent: -100,
-    // special properties
-    duration: 2, // how long the animation lasts
-    repeat: -1, // the number of repeats - this will play 3 times
-    yoyo: true, // this will alternate back and forth on each repeat. Like a yoyo
-  });
-
   return (
     <ThemeProvider theme={theme}> 
         <div className="App">
           <Header />
-          <div className='logo-container'>
-            <img src={banner} className='dadLogo' />
-          </div>
           {e && e}
             <Routes>
               <Route path='/' element={(<Home jokes={jokes} getJokes={getJokes} addJoke={addJoke}/>)} />

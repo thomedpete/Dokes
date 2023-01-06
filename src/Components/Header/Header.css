@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+.header-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.dokes {
+    font-family: 'Anton', sans-serif;
+}
