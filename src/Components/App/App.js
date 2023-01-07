@@ -18,7 +18,7 @@ import './App.css';
 
 const Copyright = () => {
   return (
-    <Typography variant="body2" color="text.secondary" align="center">
+    <Typography variant="body2" color="#FFCB5F" align="center">
       {'Copyright © '}
       <Link color="inherit" href="https://mui.com/">
         Your Website
@@ -78,10 +78,8 @@ const App = () => {
             </Routes>
         </div>
 
-      <Box sx={{ bgcolor: 'background.paper', p: 6 }} component="footer">
-        <Typography variant="h6" align="center" gutterBottom>
-          Footer
-        </Typography>
+      <Box sx={{ bgcolor: '#000', p: 2, color: '#FFCB5F'}} component="footer">
+        <Copyright />
         <Typography
           variant="subtitle1"
           align="center"
@@ -90,7 +88,6 @@ const App = () => {
         >
           Something here to give the footer a purpose!
         </Typography>
-        <Copyright />
       </Box>
     </ThemeProvider>
   );
