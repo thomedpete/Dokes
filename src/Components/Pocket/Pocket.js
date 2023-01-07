@@ -74,7 +74,20 @@ const Pocket = ({ pocket, deleteJoke }) => {
                         border: 3,
                         borderColor: 'black'
                       })}>
-                        <Typography p='5%' m="2.55%" gutterBottom variant="h5" color="black">
+                        <Typography p='5%' m="2.55%" gutterBottom  color="black"
+                          sx={(theme) => ({
+                            [theme.breakpoints.down('sm')]: {
+                              fontSize:'medium',
+                              fontWeight: 'bold',
+                              marginTop:'4%'
+                            },
+                            [theme.breakpoints.down('md')]: {
+                              fontSize: 'medium',
+                              fontWeight: 'bold',
+                              marginTop: '2%'
+                            },
+                          })}
+                        >
 
                           {joke.joke}
                         </Typography>

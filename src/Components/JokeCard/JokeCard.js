@@ -36,14 +36,16 @@ const JokeCard = ({ jokes, addJoke }) => {
           <Box className='box'>
             <article className='joke-container'>
                 {/* <img src={background} alt="background" className='joke-background' /> */}
-          <Typography m="2.55%" className='jokes' gutterBottom variant="h5" color="gainsboro"   ref={el => { jokeText = el }} 
+          <Typography m="2.55%" className='jokes' gutterBottom variant="h5" color="black"   ref={el => { jokeText = el }} 
           sx={(theme) => ({
             [theme.breakpoints.down('sm')]: {
-               fontSize:'medium',
-               marginTop:'4%'
+              fontSize:'medium',
+              fontWeight: 'bold',
+              marginTop:'4%'
             },
             [theme.breakpoints.down('md')]: {
               fontSize: 'medium',
+              fontWeight: 'bold',
               marginTop: '2%'
             }
 
