@@ -57,7 +57,7 @@ const Pocket = ({ pocket, deleteJoke }) => {
           <Grid container spacing={4}>
             {pocket.map((joke) => (
               <Grid item key={joke.id} xs={12} sm={6} md={4}>
-                 <Card sx={{ maxWidth: '60%', backgroundColor: "lightsteelblue" }}>
+                 <Card sx={{ maxWidth: '60%', backgroundColor: "#9966CC" }}>
                   <Stack
                     direction="column"
                     spacing={2}
