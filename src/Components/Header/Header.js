@@ -44,8 +44,8 @@ const Header = () => {
 
   return (
     <Box className='header-container' sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
-        <Toolbar>
+      <AppBar  position="static">
+        <Toolbar className='toolBar'>
           <IconButton
             aria-label="more"
             id="long-button"
@@ -58,6 +58,7 @@ const Header = () => {
           </IconButton>
           <Menu
             id="long-menu"
+            className='menuButton'
             MenuListProps={{
               'aria-labelledby': 'long-button',
             }}
@@ -72,7 +73,7 @@ const Header = () => {
             }}
           >
             {options.map((option) => (
-              <MenuItem key={option.path} selected={option === 'Pyxis'} onClick={handleClose}>
+              <MenuItem id={option.text} key={option.path} selected={option === 'Pyxis'} onClick={handleClose}>
                 <Link to={option.path}>{option.text}</Link>
               </MenuItem>
             ))}
