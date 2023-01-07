@@ -1,9 +1,10 @@
 import React, { useRef, useEffect } from 'react';
 import Button from '@mui/material/Button';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
+// import Card from '@mui/material/Card';
+// import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import { Stack } from '@mui/material';
+import Box from '@mui/material/Box';
 // import theme from '../../theme';
 // import Checkbox from '@mui/material/Checkbox';
 // import FavoriteBorder from '@mui/icons-material/FavoriteBorder';
@@ -32,24 +33,29 @@ const JokeCard = ({ jokes, addJoke }) => {
           justifyContent="space-between"
           alignItems="center"
         >
-          {/* <CardContent>
-
-            <Card sx={(theme) => ({
-              bgcolor: 'primary.dark'
-            })}> */}
+          <Box className='box'>
             <article className='joke-container'>
-                <img src={background} alt="background" className='joke-background' />
-                <Typography m="2.55%" className='jokes' gutterBottom variant="h5" color="gainsboro" ref={el => {jokeText =el}}>
+                {/* <img src={background} alt="background" className='joke-background' /> */}
+          <Typography m="2.55%" className='jokes' gutterBottom variant="h5" color="gainsboro"   ref={el => { jokeText = el }} 
+          sx={(theme) => ({
+            [theme.breakpoints.down('sm')]: {
+               fontSize:'medium',
+               marginTop:'4%'
+            },
+            [theme.breakpoints.down('md')]: {
+              fontSize: 'medium',
+              marginTop: '2%'
+            }
+
+          })}>
                 {jokes.joke}
                 </Typography>
             </article>
+        </Box>
               <Button variant="contained" color="success" onClick={() => addJoke(jokes)}>
                 Save
               </Button>
-            {/* </Card>
-          </CardContent> */}
         </Stack>
-      {/* </Card> */}
     </div>
   );
 }

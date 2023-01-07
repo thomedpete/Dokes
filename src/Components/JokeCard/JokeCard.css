@@ -6,10 +6,21 @@
     height: 100%;
 }
 
+.box{
+width: 100vw;
+height: 70vh;
+background-image: url('../../assets/dadJoke-background1.png');
+background-position: center;
+background-repeat: no-repeat;
+background-size: contain;
+contain: content;
+}
+
 .joke-container {
     display: flex;
-
-}
+ 
+   
+} 
 
 .joke-background {
     overflow: hidden;
@@ -24,7 +35,7 @@
     text-align: center;
     left: 0;
     right: 0;
-    top: 30%;
+    top: 40%;
     padding-left: 30%;
     padding-right: 30%;
     opacity: 0;
