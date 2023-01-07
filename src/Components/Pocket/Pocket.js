@@ -64,11 +64,17 @@ const Pocket = ({ pocket, deleteJoke }) => {
                     justifyContent="space-between"
                     alignItems="center"
                   >
-                    <CardContent>
-                      <Card sx={(theme) => ({
-                        bgcolor: 'primary.dark'
+                    <CardContent sx={(theme) => ({
+                        bgcolor: '#9966CC',
+                        border: 3,
+                        borderColor: 'white'
                       })}>
-                        <Typography m="2.55%" gutterBottom variant="h5" color="gainsboro">
+                      <Card sx={(theme) => ({
+                        bgcolor: '#FFCB5F',
+                        border: 3,
+                        borderColor: 'black'
+                      })}>
+                        <Typography p='5%' m="2.55%" gutterBottom variant="h5" color="black">
 
                           {joke.joke}
                         </Typography>
