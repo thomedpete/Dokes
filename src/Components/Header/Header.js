@@ -11,7 +11,7 @@ import MenuItem from '@mui/material/MenuItem';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 
 
-import { gsap, timeline } from 'gsap'
+import { gsap, Power3 } from 'gsap'
 // import dokes from '../../assets/dokes-title.png'
 // import logo from '../../assets/DADJOKE.png'
 
@@ -36,6 +36,7 @@ const options = [
 const ITEM_HEIGHT = 48;
 
 const Header = () => {
+  let titleText = useRef(null)
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
 
@@ -46,7 +47,9 @@ const Header = () => {
     setAnchorEl(null);
   };
 
-
+  useEffect(() => {
+    gsap.to(titleText, 10 , {opacity: 1, xPercent: -30, ease: Power3.easeOut, repeat: -1 })
+  }, [])
 
 
   return (
@@ -86,7 +89,7 @@ const Header = () => {
           </Menu>
           <Typography variant="h3" className='dokes' component="h3" sx={(theme) => ({
               typography: 'Anton, sans-serif', flexGrow: 1, color: 'black', fontStyle: 'bold'
-            })} >
+            })} ref={el => {titleText = el}}>
             dokes
           </Typography>
         </Toolbar>
