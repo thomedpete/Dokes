@@ -19,6 +19,7 @@ const Home = ({ jokes, pocket, getJokes, addJoke }) => {
                 justifyContent="space-between"
                 alignItems="center"
                 margin={2}
+                width='100%'
                 >
                 <JokeCard jokes={jokes} addJoke={addJoke}/>
                 <Button variant='contained' onClick={() => getJokes()}>New Joke</Button>

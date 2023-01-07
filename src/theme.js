@@ -1,7 +1,11 @@
-import React from "react";
 import { createTheme } from "@mui/material";
+import Anton from './fonts/Anton/Anton-Regular.ttf'
 
 const theme = createTheme({
+  typography: {
+    fontFamily: {Anton},
+  },
+
   palette: {
 
     primary: {
