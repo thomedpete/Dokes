@@ -21,7 +21,7 @@ const Copyright = () => {
     <Typography variant="body2" color="#FFCB5F" align="center">
       {'Copyright © '}
       <Link color="inherit" href="https://mui.com/">
-        Your Website
+        Dokes
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -83,10 +83,10 @@ const App = () => {
         <Typography
           variant="subtitle1"
           align="center"
-          color="text.secondary"
+          color="#FFCB5F"
           component="p"
         >
-          Something here to give the footer a purpose!
+          Dad Joke Generator
         </Typography>
       </Box>
     </ThemeProvider>
