@@ -57,18 +57,37 @@ const Pocket = ({ pocket, deleteJoke }) => {
           <Grid container spacing={4}>
             {pocket.map((joke) => (
               <Grid item key={joke.id} xs={12} sm={6} md={4}>
-                 <Card sx={{ maxWidth: '60%', backgroundColor: "lightsteelblue" }}>
+                 <Card sx={{ maxWidth: '60%', backgroundColor: "#9966CC" }}>
                   <Stack
                     direction="column"
                     spacing={2}
                     justifyContent="space-between"
                     alignItems="center"
                   >
-                    <CardContent>
-                      <Card sx={(theme) => ({
-                        bgcolor: 'primary.dark'
+                    <CardContent sx={(theme) => ({
+                        bgcolor: '#9966CC',
+                        border: 3,
+                        borderColor: 'white'
                       })}>
-                        <Typography m="2.55%" gutterBottom variant="h5" color="gainsboro">
+                      <Card sx={(theme) => ({
+                        bgcolor: '#FFCB5F',
+                        border: 3,
+                        borderColor: 'black'
+                      })}>
+                        <Typography p='5%' m="2.55%" gutterBottom  color="black"
+                          sx={(theme) => ({
+                            [theme.breakpoints.down('sm')]: {
+                              fontSize:'medium',
+                              fontWeight: 'bold',
+                              marginTop:'4%'
+                            },
+                            [theme.breakpoints.down('md')]: {
+                              fontSize: 'medium',
+                              fontWeight: 'bold',
+                              marginTop: '2%'
+                            },
+                          })}
+                        >
 
                           {joke.joke}
                         </Typography>
