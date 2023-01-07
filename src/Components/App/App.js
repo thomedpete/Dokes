@@ -18,10 +18,10 @@ import './App.css';
 
 const Copyright = () => {
   return (
-    <Typography variant="body2" color="text.secondary" align="center">
+    <Typography variant="body2" color="#FFCB5F" align="center">
       {'Copyright © '}
       <Link color="inherit" href="https://mui.com/">
-        Your Website
+        Dokes
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -78,19 +78,16 @@ const App = () => {
             </Routes>
         </div>
 
-      <Box sx={{ bgcolor: 'background.paper', p: 6 }} component="footer">
-        <Typography variant="h6" align="center" gutterBottom>
-          Footer
-        </Typography>
+      <Box sx={{ bgcolor: '#000', p: 2, color: '#FFCB5F'}} component="footer">
+        <Copyright />
         <Typography
           variant="subtitle1"
           align="center"
-          color="text.secondary"
+          color="#FFCB5F"
           component="p"
         >
-          Something here to give the footer a purpose!
+          Dad Joke Generator
         </Typography>
-        <Copyright />
       </Box>
     </ThemeProvider>
   );
