@@ -1,4 +1,6 @@
-import React from 'react';
+import React,{ useRef, useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -7,12 +9,14 @@ import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import { Link } from 'react-router-dom';
 
+
+import { gsap, timeline } from 'gsap'
 // import dokes from '../../assets/dokes-title.png'
 // import logo from '../../assets/DADJOKE.png'
 
 import './Header.css'
+
 
 const options = [
     {
@@ -32,14 +36,17 @@ const options = [
 const ITEM_HEIGHT = 48;
 
 const Header = () => {
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
+
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+
 
 
   return (
@@ -77,12 +84,10 @@ const Header = () => {
               </MenuItem>
             ))}
           </Menu>
-          <Typography variant="h3" className='dokes' component="div" sx={(theme) => ({
+          <Typography variant="h3" className='dokes' component="h3" sx={(theme) => ({
               typography: 'Anton, sans-serif', flexGrow: 1, color: 'black', fontStyle: 'bold'
             })} >
             dokes
-          </Typography>
-          <Typography component='p' className='dokes' sx={{ flexGrow: 1, color: 'black' }}>
           </Typography>
         </Toolbar>
       </AppBar>

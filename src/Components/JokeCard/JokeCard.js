@@ -17,8 +17,9 @@ import "./JokeCard.css"
 
 const JokeCard = ({ jokes, addJoke }) => {
   let jokeText = useRef(null)
-    const label = { inputProps: { 'aria-label': 'Favorite button to put in pocket/saved jokes' } }
 
+
+  const label = { inputProps: { 'aria-label': 'Favorite button to put in pocket/saved jokes' } }
 
   useEffect(() => {
     gsap.to(jokeText, .8, { opacity: 1, y: -5, ease: Power3.easeOut })
