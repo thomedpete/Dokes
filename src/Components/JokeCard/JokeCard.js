@@ -51,10 +51,17 @@ const JokeCard = ({ jokes, addJoke }) => {
                   fontWeight: 'bold',
                   marginTop: '5%'
                 },
+                [theme.breakpoints.up('md')]: {
+                  fontSize: 'larger',
+                  fontWeight: 'bold',
+                  marginTop: '4%',
+                  marginLeft: '10%'
+                },
                 [theme.breakpoints.down('md')]: {
                   fontSize: 'small',
                   fontWeight: 'bold',
-                  marginTop: '10%'
+                  marginTop: '10%',
+                  marginLeft:"5%"
                 },
                 [theme.breakpoints.up('lg')]: {
                   marginLeft:'24%',
