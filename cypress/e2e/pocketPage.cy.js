@@ -37,7 +37,7 @@ describe('visiting the Pocket page', () => {
 
   it('should see an empty gallery', () => { // change to w/e whoopsie content
     cy.get('.grid')
-    // .should('not.exist')
+    .should('not.exist')
     // currently has 3 cards loaded until delete tests added
     // add .contains for that content
   })
