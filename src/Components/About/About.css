@@ -22,7 +22,8 @@
     border-radius: 50px;
 }
 
-.about-us {
+.about-us,
+.about-dokes {
     font-family: 'Nunito', sans-serif;
     color: white;
     word-wrap: break-word;
