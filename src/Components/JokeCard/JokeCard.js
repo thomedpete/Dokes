@@ -55,7 +55,7 @@ const JokeCard = ({ jokes, addJoke }) => {
                 </Typography>
             </article>
         </Box>
-              <Button className='new-joke-button' variant="contained" color="success" onClick={() => addJoke(jokes)}>
+              <Button className='save-joke-button' variant="contained" color="success" onClick={() => addJoke(jokes)}>
                 Save
               </Button>
         </Stack>
