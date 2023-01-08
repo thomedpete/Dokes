@@ -38,12 +38,12 @@ const JokeCard = ({ jokes, addJoke }) => {
                 [theme.breakpoints.down('sm')]: {
                   fontSize: 'medium',
                   fontWeight: 'bold',
-                  marginTop: '4%'
+                  marginTop: '5%'
                 },
                 [theme.breakpoints.down('md')]: {
                   fontSize: 'small',
                   fontWeight: 'bold',
-                  marginTop: '7%'
+                  marginTop: '10%'
                 }
               })}>
               {jokes.joke}
