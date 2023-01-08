@@ -55,8 +55,6 @@ const App = () => {
   }, [])
 
   const addJoke = (joke) => {
-    console.log('joke', joke)
-    console.log('pocket', pocket)
     if(!pocket.some(item => item.id === joke.id))
     setPocket([...pocket, joke]);
   }
