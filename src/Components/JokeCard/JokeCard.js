@@ -15,14 +15,13 @@ const JokeCard = ({ jokes, addJoke }) => {
   let tl = useRef(null)
 
 
-  const label = { inputProps: { 'aria-label': 'Favorite button to put in pocket/saved jokes' } }
-
   useEffect(() => {
     tl = gsap.timeline({ repeat: -1, repeatDelay: 2 })
     tl.to(jokeText, .8, { opacity: 1, y: -5, ease: Power3.easeOut })
     tl.to(boxBackground, 2, { rotation: 0, ease: 'elastic(2, 0.1)', x: 20, repeat: -1, repeatDelay: 2 })
   }, [])
 
+  
   return (
     <div className='card-container'>
       <Stack
