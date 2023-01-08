@@ -38,7 +38,7 @@ const Pocket = ({ pocket, deleteJoke }) => {
           <Grid className="grid" container spacing={4} ref={el => {pocketBox = el}}>
             {pocket.map((joke) => (
               <Grid item key={joke.id} xs={12} sm={6} md={4}>
-                 <Card sx={{ maxWidth: '60%', backgroundColor: "#9966CC" }}>
+                 <Card sx={{ maxWidth: '90%', backgroundColor: "#9966CC" }}>
                   <Stack
                     direction="column"
                     spacing={2}
@@ -55,7 +55,7 @@ const Pocket = ({ pocket, deleteJoke }) => {
                         border: 3,
                         borderColor: 'black'
                       })}>
-                        <Typography p='5%' m="2.55%" gutterBottom  color="black"
+                        <Typography p='5%'  gutterBottom  color="black"
                           sx={(theme) => ({
                             [theme.breakpoints.down('sm')]: {
                               fontSize:'medium',
@@ -67,9 +67,9 @@ const Pocket = ({ pocket, deleteJoke }) => {
                               fontWeight: 'bold',
                               marginTop: '2%'
                             },
+                            
                           })}
                         >
-
                           {joke.joke}
                         </Typography>
                         <Button variant="contained" color="success" onClick={() => deleteJoke(joke)}>

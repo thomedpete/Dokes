@@ -37,12 +37,12 @@ const JokeCard = ({ jokes, addJoke }) => {
                 [theme.breakpoints.down('sm')]: {
                   fontSize: 'medium',
                   fontWeight: 'bold',
-                  marginTop: '4%'
+                  marginTop: '5%'
                 },
                 [theme.breakpoints.down('md')]: {
-                  fontSize: 'medium',
+                  fontSize: 'small',
                   fontWeight: 'bold',
-                  marginTop: '2%'
+                  marginTop: '10%'
                 }
               })}>
               {jokes.joke}
@@ -50,7 +50,7 @@ const JokeCard = ({ jokes, addJoke }) => {
           </article>
         </Box>
         <Button className='save-joke-button' variant="contained" color="success" onClick={() => addJoke(jokes)}>
-          Save
+          Save to Pocket
         </Button>
       </Stack>
     </div>
