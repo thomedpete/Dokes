@@ -5,6 +5,7 @@ import { Routes, Route } from 'react-router-dom'
 import About from '../About/About';
 import Header from '../Header/Header';
 import Home from '../Home/Home'
+import BadURL from '../BadURL/BadURL'
 
 import theme from '../../theme';
 import Pocket from '../Pocket/Pocket'
@@ -75,6 +76,7 @@ const App = () => {
               <Route path='/' element={(<Home jokes={jokes} getJokes={getJokes} addJoke={addJoke}/>)} />
               <Route path="/pocket" element={(<Pocket pocket={pocket} deleteJoke={deleteJoke}/>)} />
               <Route path="/about" element={(<About/>)} />
+              <Route path='/*' element={(<BadURL />)} />
             </Routes>
         </div>
 
