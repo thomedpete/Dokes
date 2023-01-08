@@ -39,7 +39,6 @@ const Pocket = ({ pocket, deleteJoke }) => {
       <CssBaseline />
       <main>
         <Container sx={{ py: 8 }} maxWidth="md">
-          {/* End hero unit */}
           {!pocket.length && <Whoopsie />}
           <Grid className="grid" container spacing={4}>
             {pocket.map((joke) => (
@@ -76,7 +75,6 @@ const Pocket = ({ pocket, deleteJoke }) => {
                             
                           })}
                         >
-
                           {joke.joke}
                         </Typography>
                         <Button variant="contained" color="success" onClick={() => deleteJoke(joke)}>
@@ -91,22 +89,6 @@ const Pocket = ({ pocket, deleteJoke }) => {
           </Grid>
         </Container>
       </main>
-      {/* Footer */}
-      {/* <Box sx={{ bgcolor: 'background.paper', p: 6 }} component="footer">
-        <Typography variant="h6" align="center" gutterBottom>
-          Footer
-        </Typography>
-        <Typography
-          variant="subtitle1"
-          align="center"
-          color="text.secondary"
-          component="p"
-        >
-          Something here to give the footer a purpose!
-        </Typography>
-        <Copyright />
-      </Box> */}
-      {/* End footer */}
     </ThemeProvider>
   );
 }
