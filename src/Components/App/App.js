@@ -4,10 +4,7 @@ import { Routes, Route } from 'react-router-dom'
 import About from '../About/About';
 import Header from '../Header/Header';
 import Home from '../Home/Home'
-
 import BadURL from '../BadURL/BadURL'
-
-
 import theme from '../../theme';
 import Pocket from '../Pocket/Pocket'
 import Link from '@mui/material/Link';

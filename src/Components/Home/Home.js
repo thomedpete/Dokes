@@ -1,20 +1,12 @@
-import Checkbox from '@mui/material/Checkbox';
 import Button from '@mui/material/Button';
 import { Stack } from '@mui/material';
 import PropTypes from 'prop-types';
-import React, { useState, useEffect, useRef } from 'react'
-import { Routes, Route } from 'react-router-dom'
-import { gsap, Bounce } from 'gsap'
+import React, {  useRef } from 'react'
 import JokeCard from '../JokeCard/JokeCard';
 
 const Home = ({ jokes, getJokes, addJoke }) => {
     let newJokeBtn = useRef(null)
     let tl = useRef(null)
-
-    useEffect(() => {
-        // tl = gsap.timeline({ repeat: -1, repeatDelay: 2 })
-        //     tl.to(newJokeBtn, 2, { ease: Bounce.easeOut, y: 20 })
-    }, [])
 
     return (
         <div>
