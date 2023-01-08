@@ -15,7 +15,6 @@ const JokeCard = ({ jokes, addJoke }) => {
   let tl = useRef(null)
 
 
-  const label = { inputProps: { 'aria-label': 'Favorite button to put in pocket/saved jokes' } }
 
   useEffect(() => {
     tl = gsap.timeline({ repeat: -1, repeatDelay: 2 })
