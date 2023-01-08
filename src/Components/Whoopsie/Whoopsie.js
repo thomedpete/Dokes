@@ -11,7 +11,7 @@ const Whoopsie = () => {
           <h2 className='aboutUs-title'>Oh No!</h2>
           <article className='aboutUs-container'>
             <p className='about-us'>
-              You don't have any jokes in your pocket yet... <Link color="#9966cc" href="/">SAVE SOME</Link>>!
+              You don't have any jokes in your pocket yet... <Link color="#9966cc" href="/">SAVE SOME</Link>!
             </p>
           </article>
         </div>
