@@ -41,9 +41,9 @@ const JokeCard = ({ jokes, addJoke }) => {
                   marginTop: '4%'
                 },
                 [theme.breakpoints.down('md')]: {
-                  fontSize: 'medium',
+                  fontSize: 'small',
                   fontWeight: 'bold',
-                  marginTop: '2%'
+                  marginTop: '7%'
                 }
               })}>
               {jokes.joke}

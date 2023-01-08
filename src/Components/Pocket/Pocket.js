@@ -73,6 +73,7 @@ const Pocket = ({ pocket, deleteJoke }) => {
                               fontWeight: 'bold',
                               marginTop: '2%'
                             },
+                            
                           })}
                         >
 
