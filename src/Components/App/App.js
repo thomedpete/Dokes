@@ -11,7 +11,6 @@ import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 import {  ThemeProvider } from '@mui/material/styles';
 import Box from '@mui/material/Box';
-
 import './App.css';
 
 const Copyright = () => {

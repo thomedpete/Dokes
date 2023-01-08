@@ -1,7 +1,7 @@
 import Button from '@mui/material/Button';
 import { Stack } from '@mui/material';
 import PropTypes from 'prop-types';
-import React, {  useRef } from 'react'
+import React, { useRef } from 'react'
 import JokeCard from '../JokeCard/JokeCard';
 
 const Home = ({ jokes, getJokes, addJoke }) => {
