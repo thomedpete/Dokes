@@ -86,7 +86,7 @@ const App = () => {
           color="#FFCB5F"
           component="p"
         >
-          Dad Joke Generator
+          Dad Joke Generator by T.I.M.
         </Typography>
       </Box>
     </ThemeProvider>

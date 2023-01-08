@@ -31,7 +31,8 @@ const Home = ({ jokes, pocket, getJokes, addJoke }) => {
                 width='100%'
                 >
                 <JokeCard jokes={jokes} addJoke={addJoke}/>
-                <Button variant='contained' ref={el => {newJokeBtn = el}} onClick={() => getJokes()}>New Joke</Button>
+                <Button className='new-joke-button' variant='contained' ref={el => {newJokeBtn = el}} onClick={() => getJokes()}>New Joke</Button>
+
             </Stack>
         </div>
     )

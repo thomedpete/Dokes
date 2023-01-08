@@ -19,6 +19,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Link from '@mui/material/Link';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import Whoopsie from '../Whoopsie/Whoopsie'
 
 function Copyright() {
   return (
@@ -54,7 +55,8 @@ const Pocket = ({ pocket, deleteJoke }) => {
       <main>
         <Container sx={{ py: 8 }} maxWidth="md">
           {/* End hero unit */}
-          <Grid container spacing={4}>
+          {!pocket.length && <Whoopsie />}
+          <Grid className="grid" container spacing={4}>
             {pocket.map((joke) => (
               <Grid item key={joke.id} xs={12} sm={6} md={4}>
                  <Card sx={{ maxWidth: '60%', backgroundColor: "#9966CC" }}>
