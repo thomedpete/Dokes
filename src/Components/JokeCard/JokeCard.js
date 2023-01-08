@@ -3,7 +3,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Stack } from '@mui/material';
 import Box from '@mui/material/Box';
-
+import PropTypes from 'prop-types';
 import { gsap, Power3 } from 'gsap'
 import { RoughEase } from "gsap/EasePack"
 import "./JokeCard.css"
@@ -25,7 +25,6 @@ const JokeCard = ({ jokes, addJoke }) => {
 
   return (
     <div className='card-container'>
-      {/* <Card sx={{ maxWidth: '60%' }}> */}
       <Stack
         direction="column"
         spacing={2}
@@ -46,7 +45,6 @@ const JokeCard = ({ jokes, addJoke }) => {
                   fontWeight: 'bold',
                   marginTop: '2%'
                 }
-
               })}>
               {jokes.joke}
             </Typography>
@@ -61,3 +59,7 @@ const JokeCard = ({ jokes, addJoke }) => {
 }
 
 export default JokeCard; 
+JokeCard.propTypes = {
+  jokes: PropTypes.object,
+  addJoke: PropTypes.func
+}

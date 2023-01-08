@@ -1,7 +1,5 @@
 import * as React from 'react';
-import { Typography } from '@mui/material';
 import Link from '@mui/material/Link';
-
 import './About.css'
 
 const About = () => {

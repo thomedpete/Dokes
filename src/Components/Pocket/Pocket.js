@@ -1,20 +1,11 @@
 import React, { useEffect, useState } from 'react';
-// import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
+import PropTypes from 'prop-types';
 import Button from '@mui/material/Button';
-import CameraIcon from '@mui/icons-material/PhotoCamera';
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Checkbox from '@mui/material/Checkbox';
 import CssBaseline from '@mui/material/CssBaseline';
-import FavoriteBorder from '@mui/icons-material/FavoriteBorder';
-import Favorite from '@mui/icons-material/Favorite';
 import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Link from '@mui/material/Link';
@@ -42,12 +33,6 @@ const label = { inputProps: { 'aria-label': 'Favorite button to put in pocket/sa
 
 
 const Pocket = ({ pocket, deleteJoke }) => {
-
-  // const deleteJoke = () => {
-  //   console.log('DELETE')
-  // }
-
-  // add some kind of 'hey, no jokes! add some' prompt when fresh/empty
 
   return (
     <ThemeProvider theme={theme}>
@@ -126,3 +111,7 @@ const Pocket = ({ pocket, deleteJoke }) => {
 }
 
 export default Pocket
+Pocket.propTypes = {
+  pocket: PropTypes.array,
+  deleteJoke: PropTypes.func
+}
