@@ -4,12 +4,21 @@ import Button from '@mui/material/Button';
 import { Stack } from '@mui/material';
 import getAllJokes from '../../apiCalls'
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { Routes, Route } from 'react-router-dom'
+
+import { gsap, Bounce } from 'gsap'
 
 import JokeCard from '../JokeCard/JokeCard';
 
 const Home = ({ jokes, pocket, getJokes, addJoke }) => {
+    let newJokeBtn = useRef(null)
+    let tl = useRef(null)
+
+    useEffect(() => {
+        // tl = gsap.timeline({ repeat: -1, repeatDelay: 2 })
+        //     tl.to(newJokeBtn, 2, { ease: Bounce.easeOut, y: 20 })
+    }, [])
 
     return (
         <div>
@@ -22,7 +31,7 @@ const Home = ({ jokes, pocket, getJokes, addJoke }) => {
                 width='100%'
                 >
                 <JokeCard jokes={jokes} addJoke={addJoke}/>
-                <Button variant='contained' onClick={() => getJokes()}>New Joke</Button>
+                <Button variant='contained' ref={el => {newJokeBtn = el}} onClick={() => getJokes()}>New Joke</Button>
             </Stack>
         </div>
     )
