@@ -1,3 +1,7 @@
+html {
+  contain: content;
+}
+
 body {
   background-image: url('./assets/noise.png');
   margin: 0;

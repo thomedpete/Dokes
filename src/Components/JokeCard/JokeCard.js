@@ -32,16 +32,20 @@ const JokeCard = ({ jokes, addJoke }) => {
       >
         <Box className='box' sx={(theme) => ({
           [theme.breakpoints.down('sm')]: {
-            marginRight:'10%'
+            marginRight:'15%'
           },
           [theme.breakpoints.down('md')]: {
-            marginRight: '10%'
+            marginRight: '15%'
           }
         
         })} ref={el => { boxBackground = el }}>
           <article className='joke-container'>
-            <Typography m="2.55%" className='jokes' gutterBottom variant="h5" color="black" ref={el => { jokeText = el }}
+            <Typography m="2.55%" className='jokes'  variant="h5" color="black" ref={el => { jokeText = el }}
               sx={(theme) => ({
+                display:'flex',
+                flexWrap:'wrap',
+                width:'70%',
+           
                 [theme.breakpoints.down('sm')]: {
                   fontSize: 'medium',
                   fontWeight: 'bold',
@@ -51,6 +55,11 @@ const JokeCard = ({ jokes, addJoke }) => {
                   fontSize: 'small',
                   fontWeight: 'bold',
                   marginTop: '10%'
+                },
+                [theme.breakpoints.up('lg')]: {
+                  marginLeft:'24%',
+                  width:'35%',
+                  marginTop:'-1%'
                 }
               })}>
               {jokes.joke}

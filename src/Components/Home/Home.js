@@ -9,7 +9,7 @@ const Home = ({ jokes, getJokes, addJoke }) => {
     let tl = useRef(null)
 
     return (
-        <div>
+        <div className='stackDiv'>
             <Stack
                 direction="column"
                 spacing={2}
