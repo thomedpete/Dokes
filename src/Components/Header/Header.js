@@ -10,9 +10,7 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 
-
 import { gsap, Power3 } from 'gsap'
-// import dokes from '../../assets/dokes-title.png'
 import logo from '../../assets/DADJOKE.png'
 
 import './Header.css'
@@ -51,13 +49,11 @@ const Header = () => {
   };
 
   useEffect(() => {
-    let tl = gsap.timeline({repeat:-1,repeatDelay:2})
+    tl = gsap.timeline({repeat:-1,repeatDelay:2})
       tl.to(logoIcon, 0.7,{rotation:30})
-      tl.to(logoIcon, 3,{rotation:0,ease: 'elastic(2, 0.1)', x: 20 })
+      tl.to(logoIcon, 2,{rotation:0,ease: 'elastic(2, 0.1)', x: 20, repeat: -1 })
       tl.to(titleText, 10 , {opacity: 1, xPercent: 40, ease: Power3.easeOut, repeat: -1 })
-    // gsap.to(logoIcon, 10 , {opacity: 1, xPercent: 40, ease: Power3.easeOut, repeat: -1 })
   }, [])
-
 
   return (
     <Box className='header-container' sx={{ flexGrow: 1 }}>
