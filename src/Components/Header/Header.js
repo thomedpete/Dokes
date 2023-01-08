@@ -13,7 +13,7 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 
 import { gsap, Power3 } from 'gsap'
 // import dokes from '../../assets/dokes-title.png'
-// import logo from '../../assets/DADJOKE.png'
+import logo from '../../assets/DADJOKE.png'
 
 import './Header.css'
 
@@ -37,6 +37,8 @@ const ITEM_HEIGHT = 48;
 
 const Header = () => {
   let titleText = useRef(null)
+  let logoIcon = useRef(null)
+
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
 
@@ -48,7 +50,8 @@ const Header = () => {
   };
 
   useEffect(() => {
-    gsap.to(titleText, 10 , {opacity: 1, xPercent: -30, ease: Power3.easeOut, repeat: -1 })
+    gsap.to(titleText, 10 , {opacity: 1, xPercent: 40, ease: Power3.easeOut, repeat: -1 })
+    gsap.to(logoIcon, 10 , {opacity: 1, xPercent: 40, ease: Power3.easeOut, repeat: -1 })
   }, [])
 
 
@@ -69,9 +72,7 @@ const Header = () => {
           <Menu
             id="long-menu"
             className='menuButton'
-            MenuListProps={{
-              'aria-labelledby': 'long-button',
-            }}
+            MenuListProps={{ 'aria-labelledby': 'long-button', }}
             anchorEl={anchorEl}
             open={open}
             onClose={handleClose}
@@ -88,6 +89,7 @@ const Header = () => {
               </MenuItem>
             ))}
           </Menu>
+          <img src={logo} className='logo' ref={el => {logoIcon = el}}/>
           <Typography variant="h3" className='dokes' component="h3" sx={(theme) => ({
               typography: 'Anton, sans-serif', flexGrow: 1, color: 'black', fontStyle: 'bold'
             })} ref={el => {titleText = el}}>

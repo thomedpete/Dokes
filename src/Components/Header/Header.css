@@ -7,7 +7,12 @@
     justify-content: space-between;
 }
 
+.logo {
+    height: 40px;
+}
+
 .dokes {
+    width: 400px;
     font-family: 'Anton', sans-serif;
     opacity: 0;
 }
