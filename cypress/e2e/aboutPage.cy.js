@@ -23,5 +23,4 @@ describe('Visiting the About Page', () => {
         cy.get('#matt').should('exist')
         cy.get('#walter').should('exist')
     })
-
 })
