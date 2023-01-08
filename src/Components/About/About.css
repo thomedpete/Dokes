@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Nunito&display=swap');
+
+.about-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.aboutUs-title {
+    font-size: 30px;
+    color: white;
+    font-family: 'Nunito', sans-serif;
+}
+
+.aboutUs-container {
+    background-color: black;
+    height: 50%;
+    width: 60%;
+    margin: 10px;
+    border: 5px #9966cc ridge;
+    border-radius: 50px;
+}
+
+.about-us {
+    font-family: 'Nunito', sans-serif;
+    color: white;
+    word-wrap: break-word;
+    padding: 30px;
+    font-size: 20px;
+}
