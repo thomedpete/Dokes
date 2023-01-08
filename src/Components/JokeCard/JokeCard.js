@@ -51,7 +51,7 @@ const JokeCard = ({ jokes, addJoke }) => {
           </article>
         </Box>
         <Button className='save-joke-button' variant="contained" color="success" onClick={() => addJoke(jokes)}>
-          Save
+          Save to Pocket
         </Button>
       </Stack>
     </div>
