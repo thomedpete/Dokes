@@ -38,6 +38,7 @@ const ITEM_HEIGHT = 48;
 const Header = () => {
   let titleText = useRef(null)
   let logoIcon = useRef(null)
+  let tl = useRef(null)
 
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
@@ -50,8 +51,11 @@ const Header = () => {
   };
 
   useEffect(() => {
-    gsap.to(titleText, 10 , {opacity: 1, xPercent: 40, ease: Power3.easeOut, repeat: -1 })
-    gsap.to(logoIcon, 10 , {opacity: 1, xPercent: 40, ease: Power3.easeOut, repeat: -1 })
+    let tl = gsap.timeline({repeat:-1,repeatDelay:2})
+      tl.to(logoIcon, 0.7,{rotation:30})
+      tl.to(logoIcon, 3,{rotation:0,ease: 'elastic(2, 0.1)', x: 20 })
+      tl.to(titleText, 10 , {opacity: 1, xPercent: 40, ease: Power3.easeOut, repeat: -1 })
+    // gsap.to(logoIcon, 10 , {opacity: 1, xPercent: 40, ease: Power3.easeOut, repeat: -1 })
   }, [])
 
 
@@ -61,6 +65,7 @@ const Header = () => {
         <Toolbar className='toolBar'>
           <IconButton
             aria-label="more"
+            className='icon-button'
             id="long-button"
             aria-controls={open ? 'long-menu' : undefined}
             aria-expanded={open ? 'true' : undefined}
@@ -80,12 +85,13 @@ const Header = () => {
               style: {
                 maxHeight: ITEM_HEIGHT * 4.5,
                 width: '20ch',
+                backgroundColor: '#000000',
               },
             }}
           >
             {options.map((option) => (
               <MenuItem id={option.text} key={option.path} selected={option === 'Pyxis'} onClick={handleClose}>
-                <Link to={option.path}>{option.text}</Link>
+                <Link className='little-link'to={option.path}>{option.text}</Link>
               </MenuItem>
             ))}
           </Menu>

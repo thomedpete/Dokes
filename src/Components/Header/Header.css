@@ -11,6 +11,32 @@
     height: 40px;
 }
 
+.icon-button {
+    color: #000;
+}
+
+.little-link {
+    color: #fdc95e;
+}
+
+.little-link:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 3px;
+    transform: scaleX(0);
+    background-color: #9966cc;
+    transition: transform 3;
+}
+
+.little-link:hover:after {
+    transform-origin: bottom left;
+    transform: scaleX(1);
+}
+
 .dokes {
     width: 400px;
     font-family: 'Anton', sans-serif;
