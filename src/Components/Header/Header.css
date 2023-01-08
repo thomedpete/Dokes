@@ -5,10 +5,15 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+    width:100%
 }
 
 .logo {
     height: 40px;
+}
+
+.toolBar {
+    width:100%
 }
 
 .icon-button {
@@ -38,7 +43,7 @@
 }
 
 .dokes {
-    width: 400px;
+    width: 100%;
     font-family: 'Anton', sans-serif;
     opacity: 0;
 }
