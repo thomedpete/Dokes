@@ -15,12 +15,12 @@ const About = () => {
             </p>
             <p className='about-us'>
               T.I.M. is the dev team of T -
-              <Link className='thomas' color="#9966cc" href="https://github.com/thomedpete" underline="none"> Thomas</Link>
-              <Link className='peterson' color="#9966cc" href="https://www.linkedin.com/in/thomas-peterson-web-dev/" underline="none"> Peterson</Link>, I -
-              <Link color="#9966cc" href="https://github.com/grainymac" underline="none"> Ian</Link> 
-              <Link color="#9966cc" href="https://www.linkedin.com/in/ianmac87/" underline="none"> McIntosh</Link> and M -
-              <Link color="#9966cc" href="https://github.com/MattWalterTX" underline="none"> Matt</Link>
-              <Link color="#9966cc" href="https://www.linkedin.com/in/matt-walter-67b810246/" underline="none"> Walter</Link>
+              <Link id='thomas' color="#9966cc" href="https://github.com/thomedpete" underline="none"> Thomas</Link>
+              <Link id='peterson' color="#9966cc" href="https://www.linkedin.com/in/thomas-peterson-web-dev/" underline="none"> Peterson</Link>, I -
+              <Link id='ian' color="#9966cc" href="https://github.com/grainymac" underline="none"> Ian</Link> 
+              <Link id='mcintosh' color="#9966cc" href="https://www.linkedin.com/in/ianmac87/" underline="none"> McIntosh</Link> and M -
+              <Link id='matt' color="#9966cc" href="https://github.com/MattWalterTX" underline="none"> Matt</Link>
+              <Link id='walter' color="#9966cc" href="https://www.linkedin.com/in/matt-walter-67b810246/" underline="none"> Walter</Link>
 
               . Feel free to explore our Github (first name) and LinkedIn (last name) via these links!
             </p>

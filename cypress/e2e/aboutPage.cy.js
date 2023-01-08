@@ -16,6 +16,12 @@ describe('Visiting the About Page', () => {
     })
 
     it('user should be able to click on links for more information about developers', () => {
-        cy.get('about-us').should('contain', 'Thomas')
+        cy.get('#thomas').should('exist')
+        cy.get('#peterson').should('exist')
+        cy.get('#ian').should('exist')
+        cy.get('#mcintosh').should('exist')
+        cy.get('#matt').should('exist')
+        cy.get('#walter').should('exist')
     })
+
 })
