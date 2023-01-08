@@ -25,7 +25,6 @@ const JokeCard = ({ jokes, addJoke }) => {
 
   return (
     <div className='card-container'>
-      {/* <Card sx={{ maxWidth: '60%' }}> */}
       <Stack
         direction="column"
         spacing={2}
@@ -46,7 +45,6 @@ const JokeCard = ({ jokes, addJoke }) => {
                   fontWeight: 'bold',
                   marginTop: '2%'
                 }
-
               })}>
               {jokes.joke}
             </Typography>
