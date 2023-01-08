@@ -1,45 +1,31 @@
-describe('visiting the Pocket page', () => {
+describe('visiting the Pocket Page', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:3000')
     cy.intercept(`https://icanhazdadjoke.com/`,
-        {
-          "id": "R7UfaahVfFd",
-          "joke": "My dog used to chase people on a bike a lot. It got so bad I had to take his bike away.",
-          "status": 200
-        }
-      )
-    cy.get(`.save-joke-button`).click()
-    cy.get(`.new-joke-button`).click()
-    cy.intercept(`https://icanhazdadjoke.com/`,
-        {
-          "id": "R7UfaahVfFd",
-          "joke": "My dog used to chase people on a bike a lot. It got so bad I had to take his bike away.",
-          "status": 200
-        }
-      )
-    cy.get(`.save-joke-button`).click()
-    cy.get(`.new-joke-button`).click()
-    cy.intercept(`https://icanhazdadjoke.com/`,
-        {
-          "id": "R7UfaahVfFd",
-          "joke": "My dog used to chase people on a bike a lot. It got so bad I had to take his bike away.",
-          "status": 200
-        }
-      )
-    cy.get(`.save-joke-button`).click()
-    cy.visit('http://localhost:3000/pocket')
+      {
+        statusCode: 200, 
+        ok: true,
+        fixture: 'joke1'
+    })
   })
- 
-  // Unsure if this test is needed, but maybe with page change?
-  it('should see the title of the page', () => {
-    cy.get('.dokes').contains('dokes')
-  });
 
   it('should see an empty gallery', () => { // change to w/e whoopsie content
-    cy.get('.grid')
-    .should('not.exist')
-    // currently has 3 cards loaded until delete tests added
-    // add .contains for that content
+    cy.visit('http://localhost:3000/pocket')
+    cy.get('.aboutUs-container').contains('You don\'t have any jokes in your pocket yet... SAVE SOME!')
+  })
+
+  it('should be able to save and delete a joke', () => {
+    cy.visit('http://localhost:3000').get('.save-joke-button').click()
+    cy.get(`#long-button`).click().get('#Pocket > .little-link').click()
+    cy.url().should('eq', 'http://localhost:3000/pocket')
+    cy.get('.MuiPaper-root > .MuiTypography-root').contains('What do you call a magician who lost his magic? Ian.')
+    cy.get('.MuiPaper-root > .MuiButtonBase-root').click()
+    cy.get('.aboutUs-container').contains('You don\'t have any jokes in your pocket yet... SAVE SOME!')
+  })
+
+  it('should be able to return home via the Whoopsie content Link', () => {
+    cy.visit('http://localhost:3000/pocket')
+    cy.get('.about-us > .MuiTypography-root').click()
+    cy.url().should('eq', 'http://localhost:3000/')
   })
 
 })
