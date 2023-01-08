@@ -1,17 +1,14 @@
 import Checkbox from '@mui/material/Checkbox';
 import Button from '@mui/material/Button';
-
 import { Stack } from '@mui/material';
+import PropTypes from 'prop-types';
 import getAllJokes from '../../apiCalls'
-
 import React, { useState, useEffect, useRef } from 'react'
 import { Routes, Route } from 'react-router-dom'
-
 import { gsap, Bounce } from 'gsap'
-
 import JokeCard from '../JokeCard/JokeCard';
 
-const Home = ({ jokes, pocket, getJokes, addJoke }) => {
+const Home = ({ jokes, getJokes, addJoke }) => {
     let newJokeBtn = useRef(null)
     let tl = useRef(null)
 
@@ -39,3 +36,8 @@ const Home = ({ jokes, pocket, getJokes, addJoke }) => {
 }
 
 export default Home
+Home.propTypes = {
+    jokes: PropTypes.object,
+    getJokes: PropTypes.func,
+    addJoke: PropTypes.func
+}

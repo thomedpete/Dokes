@@ -9,10 +9,8 @@ import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-
 import { gsap, Power3 } from 'gsap'
 import logo from '../../assets/DADJOKE.png'
-
 import './Header.css'
 
 
