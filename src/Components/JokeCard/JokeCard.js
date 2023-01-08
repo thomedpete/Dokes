@@ -30,7 +30,15 @@ const JokeCard = ({ jokes, addJoke }) => {
         justifyContent="space-between"
         alignItems="center"
       >
-        <Box className='box' ref={el => { boxBackground = el }}>
+        <Box className='box' sx={(theme) => ({
+          [theme.breakpoints.down('sm')]: {
+            marginRight:'10%'
+          },
+          [theme.breakpoints.down('md')]: {
+            marginRight: '10%'
+          }
+        
+        })} ref={el => { boxBackground = el }}>
           <article className='joke-container'>
             <Typography m="2.55%" className='jokes' gutterBottom variant="h5" color="black" ref={el => { jokeText = el }}
               sx={(theme) => ({
