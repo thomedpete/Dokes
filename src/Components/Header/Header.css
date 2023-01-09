@@ -5,6 +5,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+    overflow: hidden;
 }
 
 .logo {
@@ -38,7 +39,8 @@
 }
 
 .dokes {
-    width: 400px;
+    width: 100px;
     font-family: 'Anton', sans-serif;
     opacity: 0;
+    overflow: hidden;
 }
