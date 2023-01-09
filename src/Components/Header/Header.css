@@ -46,4 +46,5 @@
     width: 100%;
     font-family: 'Anton', sans-serif;
     opacity: 0;
+    overflow: hidden;
 }

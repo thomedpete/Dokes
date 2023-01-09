@@ -9,7 +9,7 @@ import theme from '../../theme';
 import Pocket from '../Pocket/Pocket'
 import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
-import {  ThemeProvider } from '@mui/material/styles';
+import { ThemeProvider } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import './App.css';
 
@@ -34,26 +34,26 @@ const App = () => {
 
   const getJokes = async () => {
     let url = "https://icanhazdadjoke.com/";
-    let result = null;
     try {
-      result = await axios(url, {
+      const response = await axios(url, {
         headers: {
           Accept: "application/json",
         },
       });
+      setJokes(response.data);
     } catch (e) {
       setError(e)
       console.log(e);
     }
-    setJokes(result.data);
+
   }
   useEffect(() => {
     getJokes()
   }, [])
 
   const addJoke = (joke) => {
-    if(!pocket.some(item => item.id === joke.id))
-    setPocket([...pocket, joke]);
+    if (!pocket.some(item => item.id === joke.id))
+      setPocket([...pocket, joke]);
   }
 
   const deleteJoke = (event, joke) => {
@@ -62,19 +62,19 @@ const App = () => {
   }
 
   return (
-    <ThemeProvider theme={theme}> 
-        <div className="App">
-          <Header />
-          {e && e}
-            <Routes>
-              <Route path='/' element={(<Home jokes={jokes} getJokes={getJokes} addJoke={addJoke}/>)} />
-              <Route path="/pocket" element={(<Pocket pocket={pocket} deleteJoke={deleteJoke}/>)} />
-              <Route path="/about" element={(<About/>)} />
-              <Route path='/*' element={(<BadURL />)} />
-            </Routes>
-        </div>
+    <ThemeProvider theme={theme}>
+      <div className="App">
+        <Header />
+        {e && e}
+        <Routes>
+          <Route path='/' element={(<Home jokes={jokes} getJokes={getJokes} addJoke={addJoke} />)} />
+          <Route path="/pocket" element={(<Pocket pocket={pocket} deleteJoke={deleteJoke} />)} />
+          <Route path="/about" element={(<About />)} />
+          <Route path='/*' element={(<BadURL />)} />
+        </Routes>
+      </div>
 
-      <Box sx={{ bgcolor: '#000', p: 2, color: '#FFCB5F'}} component="footer">
+      <Box sx={{ bgcolor: '#000', p: 2, color: '#FFCB5F' }} component="footer">
         <Copyright />
         <Typography
           variant="subtitle1"
