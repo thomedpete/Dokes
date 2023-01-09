@@ -34,18 +34,18 @@ const App = () => {
 
   const getJokes = async () => {
     let url = "https://icanhazdadjoke.com/";
-    let result = null;
     try {
-      result = await axios(url, {
+      const response = await axios(url, {
         headers: {
           Accept: "application/json",
         },
       });
+      setJokes(response.data);
     } catch (e) {
       setError(e)
       console.log(e);
     }
-    setJokes(result.data);
+    
   }
   useEffect(() => {
     getJokes()
