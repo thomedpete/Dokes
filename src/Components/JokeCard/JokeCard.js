@@ -43,30 +43,31 @@ const JokeCard = ({ jokes, addJoke }) => {
             <Typography m="2.55%" className='jokes'  variant="h5" color="black" ref={el => { jokeText = el }}
               sx={(theme) => ({
                 display:'flex',
+                flexDirection:'column',
                 flexWrap:'wrap',
-                width:'70%',
+                width:'60%',
            
                 [theme.breakpoints.down('sm')]: {
-                  fontSize: 'medium',
+                  fontSize: 'small',
                   fontWeight: 'bold',
-                  marginTop: '5%'
+                  marginTop: '4%'
                 },
                 [theme.breakpoints.up('md')]: {
                   fontSize: 'larger',
                   fontWeight: 'bold',
                   marginTop: '4%',
-                  marginLeft: '10%'
+                  marginLeft: '10%',
                 },
                 [theme.breakpoints.down('md')]: {
-                  fontSize: 'large',
+                  fontSize: 'medium',
                   fontWeight: 'bold',
-                  marginTop: '10%',
+                  marginTop: '8%',
                   marginLeft:"5%"
                 },
                 [theme.breakpoints.up('lg')]: {
                   marginLeft:'24%',
                   width:'35%',
-                  marginTop:'-1%'
+                  marginTop:'1%'
                 }
               })}>
               {jokes.joke}
