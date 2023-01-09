@@ -1,4 +1,4 @@
-describe('Visiting the About Page', () => {
+describe('Visiting the Error Page', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000/4654684dfghdfy')
   })
@@ -8,7 +8,7 @@ describe('Visiting the About Page', () => {
   })
 
   it('User should be able to navigate home using the home button', () => {
-    cy.get('a > button').click()
+    cy.get('a > .MuiButtonBase-root').click()
     cy.url().should('eq','http://localhost:3000/')
   })
   
