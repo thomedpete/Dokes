@@ -1,4 +1,4 @@
-import React,{ useRef, useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -14,37 +14,34 @@ import './Header.css'
 
 
 const options = [
-    {
-        path: '/',
-        text: 'Home'
-    },
-    {
-        path: '/pocket',
-        text: 'Pocket'
-    },
-    {
-        path: '/about',
-        text: 'About'
-    }
+  {
+    path: '/',
+    text: 'Home'
+  },
+  {
+    path: '/pocket',
+    text: 'Pocket'
+  },
+  {
+    path: '/about',
+    text: 'About'
+  }
 ];
 
-
-
 const ITEM_HEIGHT = 48;
-
 
 const Header = () => {
   let titleText = useRef(null)
   let logoIcon = useRef(null)
   let tl = useRef(null)
-  
+
   const headerGSAP = () => {
-    tl = gsap.timeline({repeat:-1,repeatDelay:2})
-    tl.to(logoIcon, 0.7,{rotation:30})
-    tl.to(logoIcon, 2,{rotation:0,ease: 'elastic(2, 0.1)', x: 20, repeat: -1 })
-    tl.to(titleText, 10 , {opacity: 1, xPercent: 20, ease: Power3.easeOut, repeat: -1 })
+    tl = gsap.timeline({ repeat: -1, repeatDelay: 2 })
+    tl.to(logoIcon, 0.7, { rotation: 30 })
+    tl.to(logoIcon, 2, { rotation: 0, ease: 'elastic(2, 0.1)', x: 20, repeat: -1 })
+    tl.to(titleText, 10, { opacity: 1, xPercent: 20, ease: Power3.easeOut, repeat: -1 })
   }
-  
+
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
 
@@ -61,7 +58,7 @@ const Header = () => {
 
   return (
     <Box className='header-container' sx={{ flexGrow: 1 }}>
-      <AppBar  position="static">
+      <AppBar position="static">
         <Toolbar className='toolBar'>
           <IconButton
             aria-label="more"
@@ -91,14 +88,14 @@ const Header = () => {
           >
             {options.map((option) => (
               <MenuItem id={option.text} key={option.path} selected={option === 'Pyxis'} onClick={handleClose}>
-                <Link className='little-link'to={option.path}>{option.text}</Link>
+                <Link className='little-link' to={option.path}>{option.text}</Link>
               </MenuItem>
             ))}
           </Menu>
-          <img src={logo} alt='logo' className='logo' ref={el => {logoIcon = el}}/>
+          <img src={logo} alt='logo' className='logo' ref={el => { logoIcon = el }} />
           <Typography variant="h3" className='dokes' component="h3" sx={(theme) => ({
-              typography: 'Anton, sans-serif', flexGrow: 1, color: 'black', fontStyle: 'bold'
-            })} ref={el => {titleText = el}}>
+            typography: 'Anton, sans-serif', flexGrow: 1, color: 'black', fontStyle: 'bold'
+          })} ref={el => { titleText = el }}>
             dokes
           </Typography>
         </Toolbar>
