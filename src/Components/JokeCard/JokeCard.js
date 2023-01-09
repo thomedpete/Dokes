@@ -17,7 +17,7 @@ const JokeCard = ({ jokes, addJoke }) => {
   const jokeCardGSAP = () => {
     tl = gsap.timeline({ repeat: -1, repeatDelay: 2 })
     tl.to(jokeText, .8, { opacity: 1, y: -5, ease: Power3.easeOut })
-    tl.to(boxBackground, 2, { rotation: 0, ease: 'elastic(2, 0.1)', x: 20, repeat: -1, repeatDelay: 2 })
+    tl.to(boxBackground, 2, { rotation: 0, ease: 'elastic(2, 0.1)', x: 20, repeat: -1, repeatDelay: 4 })
   }
 
   useEffect(() => {
@@ -34,25 +34,43 @@ const JokeCard = ({ jokes, addJoke }) => {
       >
         <Box className='box' sx={(theme) => ({
           [theme.breakpoints.down('sm')]: {
-            marginRight:'10%'
+            marginRight:'15%'
           },
           [theme.breakpoints.down('md')]: {
-            marginRight: '10%'
+            marginRight: '15%'
           }
         
         })} ref={el => { boxBackground = el }}>
           <article className='joke-container'>
-            <Typography m="2.55%" className='jokes' gutterBottom variant="h5" color="black" ref={el => { jokeText = el }}
+            <Typography m="2.55%" className='jokes'  variant="h5" color="black" ref={el => { jokeText = el }}
               sx={(theme) => ({
+                display:'flex',
+                flexDirection:'column',
+                flexWrap:'wrap',
+                width:'60%',
+           
                 [theme.breakpoints.down('sm')]: {
-                  fontSize: 'medium',
-                  fontWeight: 'bold',
-                  marginTop: '5%'
-                },
-                [theme.breakpoints.down('md')]: {
                   fontSize: 'small',
                   fontWeight: 'bold',
-                  marginTop: '10%'
+                  marginTop: '4%'
+                },
+                [theme.breakpoints.up('md')]: {
+                  fontSize: 'larger',
+                  fontWeight: 'bold',
+                  marginTop: '4%',
+                  marginLeft: '10%',
+                  width:"60%"
+                },
+                [theme.breakpoints.down('md')]: {
+                  fontSize: 'medium',
+                  fontWeight: 'bold',
+                  marginTop: '8%',
+                  marginLeft:"5%"
+                },
+                [theme.breakpoints.up('lg')]: {
+                  marginLeft:'24%',
+                  width:'35%',
+                  marginTop:'1%'
                 }
               })}>
               {jokes.joke}

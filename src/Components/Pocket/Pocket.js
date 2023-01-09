@@ -34,7 +34,7 @@ const Pocket = ({ pocket, deleteJoke }) => {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <main>
-        <Container sx={{ py: 8 }} maxWidth="md">
+        <Container sx={{ py: 4, px: 0, display: 'flex', flexDirection: 'column', paddingRight:7}} maxWidth="100%" >
           {!pocket.length && <Whoopsie />}
           <Grid className="grid" container spacing={4} ref={el => { pocketBox = el }}>
             {pocket.map((joke) => (

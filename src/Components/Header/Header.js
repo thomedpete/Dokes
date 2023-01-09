@@ -59,7 +59,7 @@ const Header = () => {
   return (
     <Box className='header-container' sx={{ flexGrow: 1 }}>
       <AppBar position="static">
-        <Toolbar className='toolBar'>
+        <Toolbar className='toolBar' disableGutters>
           <IconButton
             aria-label="more"
             className='icon-button'
@@ -94,8 +94,8 @@ const Header = () => {
           </Menu>
           <img src={logo} alt='logo' className='logo' ref={el => { logoIcon = el }} />
           <Typography variant="h3" className='dokes' component="h3" sx={(theme) => ({
-            typography: 'Anton, sans-serif', flexGrow: 1, color: 'black', fontStyle: 'bold'
-          })} ref={el => { titleText = el }}>
+              typography: 'Anton, sans-serif', flexGrow: 1, color: 'black', fontStyle: 'bold', width:'100%'
+            })} ref={el => {titleText = el}}>
             dokes
           </Typography>
         </Toolbar>
