@@ -7,9 +7,8 @@ const BadURL = () => {
     return (
         <div className='about-container'>
             <article className='aboutUs-container'>
-                <h2 className='about-dokes'>on the wrong page dodo!</h2>
-                <h3 className='about-dokes'>go back home</h3>
-                <Link to='/'><button>home</button></Link>
+                <h2 className='about-dokes'>You're on the wrong page dodo!<p>Click below to go back home</p></h2>
+                <Link to='/'><button>Home</button></Link>
             </article>
         </div>
     )
