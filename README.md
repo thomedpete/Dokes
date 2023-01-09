@@ -19,6 +19,7 @@ Dokes is a dad joke application built utilizing React and Router, Cypress testin
 - ![Cyrpess](https://img.shields.io/badge/cypress-%1004E9F.svg?style=for-the-badge&logo=cypress&logoColor=%23F7DF1E)
 - ![MUI](https://img.shields.io/badge/mui-007FFF.svg?style=for-the-badge&logo=mui&logoColor=white)
 - ![GSAP](https://img.shields.io/badge/GSAP-88CE02.svg?style=for-the-badge&logo=greensock&logoColor=black)
+- ![Adobe Illustrator](https://img.shields.io/badge/adobe_illustrator-FF9A00.svg?style=for-the-badge&logo=adobe-illustrator&logoColor=black)
 
 ## Illustrations
 ![9DAE3759-A0DE-4702-AB91-1A369C327423_1_102_o](https://user-images.githubusercontent.com/105405396/211422164-c234c353-6f9d-4912-a269-54a8875753a9.jpeg)
