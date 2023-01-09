@@ -52,8 +52,7 @@ Dokes is a dad joke application built utilizing React and Router, Cypress testin
 
 ### Local Installation
 1. Clone the repo
-   ```sh
-  git@github.com:thomedpete/Dokes.git
+   ```sh git@github.com:thomedpete/Dokes.git
    ```
 2. Enter the directory and install NPM packages
    ```sh
