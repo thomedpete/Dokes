@@ -70,7 +70,7 @@ const App = () => {
               <Route path='/' element={(<Home jokes={jokes} getJokes={getJokes} addJoke={addJoke}/>)} />
               <Route path="/pocket" element={(<Pocket pocket={pocket} deleteJoke={deleteJoke}/>)} />
               <Route path="/about" element={(<About/>)} />
-              <Route path='/*' element={(<BadURL />)} />
+              <Route path='*' element={(<BadURL />)} />
             </Routes>
         </div>
 
